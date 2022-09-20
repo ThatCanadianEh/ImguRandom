@@ -52,7 +52,7 @@
       <script type="text/javascript" src="jquery.min.js"></script>
       <script type='text/javascript'>
          // taken from evilinternet(?), original source long gone
-         window.num_images = 120;
+         window.num_images = 100;
          window.char_length = 5;
          //window.char_length = 7;
          
@@ -110,14 +110,8 @@
          			img.src = "http://i.imgur.com/"+ id +"s.png";
          			
          			img.onload = function() {
-         				if (((img.width == 198) && (img.height == 160)) || ((img.width == 161) && (img.height == 81))) {
+         				if (((img.width == 198) && (img.height == 160)) || ((img.width == 161) && (img.height == 81)) || ((img.width == 298) && (img.height == 256)) || ((img.width <= 32) && (img.height <= 32))) {
          					// assume this is an imgur error image and retry
-         					fail();
-         				} else if ((img.width == 298) && (img.height == 256)) {
-         					// fuck off monopoly man
-         					fail();
-         				} else if ((img.width < 32) || (img.height < 32)) {
-         					// fuck off stupid <hr> images, favicon, and other tiny images
          					fail();
          				} else {
          					cb(id);
