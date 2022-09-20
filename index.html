@@ -52,7 +52,7 @@
       <script type="text/javascript" src="jquery.min.js"></script>
       <script type='text/javascript'>
          // taken from evilinternet(?), original source long gone
-         window.num_images = 100;
+         window.num_images = 104;
          window.char_length = 5;
          //window.char_length = 7;
          
@@ -110,7 +110,7 @@
          			img.src = "http://i.imgur.com/"+ id +"s.png";
          			
          			img.onload = function() {
-         				if (((img.width == 198) && (img.height == 160)) || ((img.width == 161) && (img.height == 81)) || ((img.width == 298) && (img.height == 256)) || ((img.width <= 32) && (img.height <= 32))) {
+         				if (((img.width == 198) && (img.height == 160)) || ((img.width == 161) && (img.height == 81)) || ((img.naturalWidth == 298) && (img.naturalHeight == 256)) || ((img.naturalWidth <= 32) && (img.naturalHeight <= 32))) {
          					// assume this is an imgur error image and retry
          					fail();
          				} else {
