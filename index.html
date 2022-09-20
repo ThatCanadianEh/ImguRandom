@@ -45,7 +45,7 @@
       <center>
          <h1>Random Imgur Images</h1>
          <span class="warning">WARNING: YOU WILL ENCOUNTER A LOT OF NSFW CONTENT THROUGH THIS. NONE OF THESE IMAGES ARE HOSTED ON THIS SITE.</span></p>
-         <p><button id="random">Load Images</button>
+         <p><button id="random">Load Images</button></p>
          <p id="info"></p>
          <div id="images"></div>
       </center>
@@ -107,7 +107,7 @@
          			
          			self.update();
          			
-         			img.src = "http://i.imgur.com/"+ id +"s.png";
+         			img.src = "http://i.imgur.com/"+ id +"_d.webp?maxwidth=4000&fidelity=high";
          			
          			img.onload = function() {
          				if (((img.width == 198) && (img.height == 160)) || ((img.width == 161) && (img.height == 81)) || ((img.naturalWidth == 298) && (img.naturalHeight == 256)) || ((img.naturalWidth <= 32) && (img.naturalHeight <= 32))) {
