@@ -107,7 +107,7 @@
          			
          			self.update();
          			
-         			img.src = "http://i.imgur.com/"+ id +"_d.webp?maxwidth=1000&fidelity=low";
+         			img.src = "http://i.imgur.com/"+ id +"_d.webp?maxwidth=1001&fidelity=low";
          			
          			img.onload = function() {
          				if (((img.width == 198) && (img.height == 160)) || ((img.width == 161) && (img.height == 81))) {
@@ -125,8 +125,14 @@
          				} else if ((img.naturalWidth == 225) && (img.naturalHeight == 225)) {
          					// fuck off other cellphone picture
          					fail();
+         				} else if ((img.naturalWidth == 399) && (img.naturalHeight == 344)) {
+         					// fuck off other other cellphone picture
+         					fail();
          				} else if ((img.naturalWidth == 1000) && (img.naturalHeight == 995)) {
          					// fuck off iPhone 5 picture
+         					fail();
+         				} else if ((img.naturalWidth == 500) && (img.naturalHeight == 388)) {
+         					// fuck off iPhone 4 picture
          					fail();
          				} else {
          					cb(id);
