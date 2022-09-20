@@ -43,16 +43,15 @@
    </head>
    <body>
       <center>
-         <h1>Random Imgur Images</h1>
-         <span class="warning">NSFW</span></p>
-         <p><button id="random">Load Images</button>
+         <h1>Monopoly Man Image Finder</h1>
+         <p><button id="random">Load Images</button></p>
          <p id="info"></p>
          <div id="images"></div>
       </center>
       <script type="text/javascript" src="jquery.min.js"></script>
       <script type='text/javascript'>
          // taken from evilinternet(?), original source long gone
-         window.num_images = 120;
+         window.num_images = 104;
          window.char_length = 5;
          //window.char_length = 7;
          
@@ -78,7 +77,7 @@
          				self.hunt(function(id) {
          					self.done++;
          					
-         					$(images_el).append("<a href=\"https://i.imgur.com/"+ id +".jpg\" target=\"_blank\" rel=\"noreferrer\"><img src=\"https://i.imgur.com/"+ id +"s.png\" height=\"110\" width=\"110\" /></a>");
+         					$(images_el).append("<a href=\"https://i.imgur.com/"+ id +"_d.webp?maxwidth=4000&fidelity=high\" target=\"_blank\" rel=\"noreferrer\"><img src=\"https://i.imgur.com/"+ id +"s.png\" height=\"110\" width=\"110\" /></a>");
          					
          					self.update();
          				});
@@ -107,14 +106,16 @@
          			
          			self.update();
          			
-         			img.src = "http://i.imgur.com/"+ id +"s.png";
+         			img.src = "http://i.imgur.com/"+ id +"_d.webp?maxwidth=1001&fidelity=low";
          			
          			img.onload = function() {
          				if (((img.width == 198) && (img.height == 160)) || ((img.width == 161) && (img.height == 81))) {
          					// assume this is an imgur error image and retry
          					fail();
-         				} else {
+         				} else if ((img.naturalWidth == 298) && (img.naturalHeight == 256)) {
          					cb(id);
+         				} else {
+         					fail();
          				}
          			}
          			
