@@ -134,6 +134,9 @@
          				} else if ((img.naturalWidth == 500) && (img.naturalHeight == 388)) {
          					// fuck off iPhone 4 picture
          					fail();
+         				} else if ((img.naturalWidth == 128) && (img.naturalHeight == 128)) {
+         					// fuck off tricolor Facebook logo picture
+         					fail();
          				} else {
          					cb(id);
          				}
