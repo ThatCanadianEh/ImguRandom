@@ -44,7 +44,7 @@
    <body>
       <center>
          <h1>Random Imgur Images</h1>
-         <span class="warning">NSFW</span></p>
+         <span class="warning">WARNING: YOU WILL ENCOUNTER A LOT OF NSFW CONTENT THROUGH THIS. NONE OF THESE IMAGES ARE HOSTED ON THIS SITE.</span></p>
          <p><button id="random">Load Images</button>
          <p id="info"></p>
          <div id="images"></div>
@@ -78,7 +78,7 @@
          				self.hunt(function(id) {
          					self.done++;
          					
-         					$(images_el).append("<a href=\"https://i.imgur.com/"+ id +".jpg\" target=\"_blank\" rel=\"noreferrer\"><img src=\"https://i.imgur.com/"+ id +"s.png\" height=\"110\" width=\"110\" /></a>");
+         					$(images_el).append("<a href=\"https://i.imgur.com/"+ id +"_d.webp?maxwidth=4000&fidelity=high\" target=\"_blank\" rel=\"noreferrer\"><img src=\"https://i.imgur.com/"+ id +"s.png\" height=\"110\" width=\"110\" /></a>");
          					
          					self.update();
          				});
@@ -112,6 +112,12 @@
          			img.onload = function() {
          				if (((img.width == 198) && (img.height == 160)) || ((img.width == 161) && (img.height == 81))) {
          					// assume this is an imgur error image and retry
+         					fail();
+         				} else if ((img.width == 298) && (img.height == 256)) {
+         					// fuck off monopoly man
+         					fail();
+         				} else if ((img.width < 32) || (img.height < 32)) {
+         					// fuck off stupid <hr> images, favicon, and other tiny images
          					fail();
          				} else {
          					cb(id);
