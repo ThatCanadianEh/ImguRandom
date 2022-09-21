@@ -5,39 +5,38 @@
       <title>Random Imgur Images</title>
       <style type='text/css'>
          body {
-         /*			background-color: #dddddd;*/
-         background-color: #000000;
-         color: #000000;
-         overflow-y: visible;
-         font-family: Arial;
+             background-color: #24201B;
+             color: #EBE2CA;
+             overflow-y: visible;
+             font-family: Arial;
          }
          h1 {
-         color: #ffffff;
+             color: #EBE2CA;
          }
          .warning {
-         font-weight: bold;
-         color: #ff0000;
-         font-size: 150%;
+             font-weight: bold;
+             color: #FE4040;
+             font-size: 150%;
          }
          #info {
-         color: #ffffff;
+             color: #EBE2CA;
          }
          #random {
-         font-size: 24px;
+             font-size: 24px;
          }
          #images {
-         margin: 20px 0;
+             margin: 20px 0;
          }
          #images a:visited {
-         opacity: 0.3;
-         display: inline-block;
+             opacity: 0.3;
+             display: inline-block;
          }
          #images img {
-         margin-right: 5px;
-         border: 2px solid #000000;
+             margin-right: 5px;
+             border: 2px solid #3D362E;
          }
          #images img:hover {
-         border: 2px solid #ffffff;
+             border: 2px solid #98CDFF;
          }
       </style>
    </head>
@@ -112,6 +111,8 @@
          			img.src = "http://i.imgur.com/"+ id +"_d.webp?maxwidth=1001&fidelity=low";
          			
          			img.onload = function() {
+                                        // Gotta be a better way to do this.
+                                        // Plus, some of the later filtered images aren't being filtered sometimes.
          				if (((img.width == 198) && (img.height == 160)) || ((img.width == 161) && (img.height == 81))) {
          					// assume this is an imgur error image and retry
          					fail();
@@ -130,13 +131,13 @@
          				} else if ((img.naturalWidth == 399) && (img.naturalHeight == 344)) {
          					// fuck off other other cellphone picture
          					fail();
-         				} else if ((img.naturalWidth == 760) && (img.naturalHeight == 756)) {
+         				} else if (((img.naturalWidth == 760) && (img.naturalHeight == 756))) {
          					// fuck off iPhone 5 picture
          					fail();
-         				} else if ((img.naturalWidth == 500) && (img.naturalHeight == 388)) {
+         				} else if (((img.naturalWidth == 500) && (img.naturalHeight == 388))) {
          					// fuck off iPhone 4 picture
          					fail();
-         				} else if ((img.naturalWidth == 128) && (img.naturalHeight == 128)) {
+         				} else if (((img.naturalWidth == 128) && (img.naturalHeight == 128))) {
          					// fuck off tricolor Facebook logo picture
          					fail();
          				} else {
