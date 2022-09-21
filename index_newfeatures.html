@@ -56,6 +56,7 @@
 
          .content {
              padding: 0 6px;
+             width: 50%;
              display: none;
              overflow: hidden;
              background-color: #3D362E;
@@ -73,7 +74,9 @@
           <button type="button" class="collapsible">Toggle Image Filters</button>
           <div class="content">
               <input type="checkbox" id="monopoly" value="monopoly" name="Filter out Monopoly Man images">
-              <label for="monopoly">Filter out Monopoly Man images</label>
+              <label for="monopoly">Filter out Monopoly Man images</label><br>
+              <input type="checkbox" id="tiny" value="tiny" name="Filter out images with a width/height of 32px or less">
+              <label for="tiny">Filter out images with a width/height of 32px or less</label>
           </div> 
          <div id="images"></div>
       </center>
@@ -123,7 +126,8 @@
          		},
          		
          		hunt: function(cb) {
-                                var monopoly = document.getElementById("monopoly").checked; 
+                                var monopoly = document.getElementById("monopoly").checked;
+                                var tiny = document.getElementById("tiny").checked; 
          			var self = this,
          				id = self.random(window.char_length),
          				img = new Image;
@@ -146,7 +150,7 @@
          				if (((img.width == 198) && (img.height == 160)) || ((img.width == 161) && (img.height == 81))) {
          					// We're going to assume images of these sizes are an imgur error images
          					fail();
-         				} else if ((img.naturalWidth <= 32) || (img.naturalHeight <= 32)) {
+         				} else if (tiny == true && (img.naturalWidth <= 32) || (img.naturalHeight <= 32)) {
          					// Filter out tiny images whose width or height is equal to or below 32px
          					fail();
          				} else if (monopoly == true && ((img.naturalWidth == 298) && (img.naturalHeight == 256))) {
