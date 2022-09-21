@@ -14,8 +14,5 @@ A modified version of the random Imgur image loader from newroman.net/imgur
   - No, I'm not joking. Some real messed-up people have uploaded *that* kind of content to Imgur.
 
 # Planned Features
-- Checkboxes to toggle certain image filters to prevent certain repetitive images from showing up.
-  - This feature is currently being worked on, and can be previewed [on the "New Features" version of the page](https://tf2cutcontentwiki.github.io/randomimgur-modified/index_newfeatures.html).
-  - The "checked" state of the filter checkboxes is currently not saved between sessions (if you close and re-open the page). LocalStorage support to save the checked states between browser sessions is planned.
 - A popout "favorites" panel where you can save images you find for future reference.
   - This feature will likely also use LocalStorage to save your favorites between browser sessions, but I may also add an "export" button to generate and save a TXT file containing a list of all your favorites that can then later be re-imported to your favorites.
