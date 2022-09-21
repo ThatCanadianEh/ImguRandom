@@ -219,13 +219,13 @@
          				} else if (iphone5 == true && ((img.naturalWidth == 760) && (img.naturalHeight == 756))) {
          					// Filter out repetitive iPhone 5 images
          					fail();
-         				} else if (iphone4 == true && ((img.naturalWidth == 500) && (img.naturalHeight == 388))) {
+         				} else if (iphone4 == true && (((img.naturalWidth == 500) && (img.naturalHeight == 388)) || ((img.naturalWidth == 90) && (img.naturalHeight == 69)))) {
          					// Filter out repetitive iPhone 4 images
          					fail();
          				} else if (facebook == true && ((img.naturalWidth == 128) && (img.naturalHeight == 128))) {
          					// Filter out tricolor Facebook logo images
          					fail();
-         				} else if (youtube == true && ((img.naturalWidth == 643) && (img.naturalHeight == 88))) {
+         				} else if (youtube == true && (((img.naturalWidth == 643) && (img.naturalHeight == 88)) || ((img.naturalWidth == 642) && (img.naturalHeight == 89)) || ((img.naturalWidth == 640) && (img.naturalHeight == 54)) || ((img.naturalWidth == 646) && (img.naturalHeight == 88)) || ((img.naturalWidth == 650) && (img.naturalHeight == 60)))) {
          					// Filter out wide YouTube header images
          					fail();
          				} else if (android == true && ((img.naturalWidth == 540) && (img.naturalHeight == 335))) {
@@ -246,7 +246,7 @@
          				} else if (banner2 == true && ((img.naturalWidth == 180) && (img.naturalHeight == 150))) {
          					// Filter out Bannermaker images #2
          					fail();
-         				} else if (taringa == true && ((img.naturalWidth == 49) && (img.naturalHeight == 33))) {
+         				} else if (taringa == true && (((img.naturalWidth == 49) && (img.naturalHeight == 33)) || ((img.naturalWidth == 750) && (img.naturalHeight == 123)) || ((img.naturalWidth == 666) && (img.naturalHeight == 69)) || ((img.naturalWidth == 700) && (img.naturalHeight == 60)) || ((img.naturalWidth == 309) && (img.naturalHeight == 150)) || ((img.naturalWidth == 700) && (img.naturalHeight == 141)))) {
          					// Filter out repetitive Taringa images
          					fail();
          				} else if (austra == true && ((img.naturalWidth == 530) && (img.naturalHeight == 40))) {
