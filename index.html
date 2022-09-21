@@ -92,7 +92,7 @@
          				return (~~(v / (interval * 1e5))) / 100;
          			}
          			
-         			$(info_el).html( ((this.done < this.total)?"Loading... "+ this.done +"/"+ this.total +" ("+ this.failures +" failures"+") ":"Done. ") + "["+ speed((this.failures + this.done)) +" req/s - "+ speed(this.done) +" img/s]");");
+         			$(info_el).html( ((this.done < this.total)?"Loading... "+ this.done +"/"+ this.total +" ("+ this.failures +" failures"+") ":"Done. ") + "["+ speed((this.failures + this.done)) +" req/s - "+ speed(this.done) +" img/s]");
          		},
          		
          		hunt: function(cb) {
