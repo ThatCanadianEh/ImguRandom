@@ -116,19 +116,19 @@
          				if (((img.width == 198) && (img.height == 160)) || ((img.width == 161) && (img.height == 81))) {
          					// assume this is an imgur error image and retry
          					fail();
-         				} else if ((img.naturalWidth == 298) && (img.naturalHeight == 256)) {
-         					// fuck off monopoly man
-         					fail();
          				} else if ((img.naturalWidth <= 32) || (img.naturalHeight <= 32)) {
          					// fuck off tiny images
          					fail();
-         				} else if ((img.naturalWidth == 652) && (img.naturalHeight == 470)) {
+         				} else if (((img.naturalWidth == 298) && (img.naturalHeight == 256))) {
+         					// fuck off monopoly man
+         					fail();
+         				} else if (((img.naturalWidth == 652) && (img.naturalHeight == 470))) {
          					// fuck off cellphone picture
          					fail();
-         				} else if ((img.naturalWidth == 225) && (img.naturalHeight == 225)) {
+         				} else if (((img.naturalWidth == 225) && (img.naturalHeight == 225))) {
          					// fuck off other cellphone picture
          					fail();
-         				} else if ((img.naturalWidth == 399) && (img.naturalHeight == 344)) {
+         				} else if (((img.naturalWidth == 399) && (img.naturalHeight == 344))) {
          					// fuck off other other cellphone picture
          					fail();
          				} else if (((img.naturalWidth == 760) && (img.naturalHeight == 756))) {
