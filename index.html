@@ -108,7 +108,7 @@
          			
          			self.update();
          			
-         			img.src = "http://i.imgur.com/"+ id +"_d.webp?maxwidth=1048&fidelity=low";
+         			img.src = "http://i.imgur.com/"+ id +"_d.webp?maxwidth=1001&fidelity=low";
          			
          			img.onload = function() {
                                         // Time to check the image's height and width
@@ -148,7 +148,7 @@
          				} else if (((img.naturalWidth == 540) && (img.naturalHeight == 335))) {
          					// Filter out Android Authority images
          					fail();
-         				} else if (((img.naturalWidth == 1024) && (img.naturalHeight == 640))) {
+         				} else if (((img.naturalWidth == 760) && (img.naturalHeight == 475))) {
          					// Filter out Yu-Gi-Oh online game images
          					fail();
          				} else if (((img.naturalWidth == 100) && (img.naturalHeight == 75))) {
