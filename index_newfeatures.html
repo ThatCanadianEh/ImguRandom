@@ -2,57 +2,87 @@
 <html>
    <head>
       <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-      <title>Random Imgur Images</title>
+      <title>TF2CutContent's Random Imgur Image Loader</title>
       <style type='text/css'>
          body {
-         /*			background-color: #dddddd;*/
-         background-color: #000000;
-         color: #000000;
-         overflow-y: visible;
-         font-family: Arial;
+             background-color: #24201B;
+             color: #EBE2CA;
+             overflow-y: visible;
+             font-family: Arial;
          }
          h1 {
-         color: #ffffff;
+             color: #EBE2CA;
          }
          .warning {
-         font-weight: bold;
-         color: #ff0000;
-         font-size: 150%;
+             font-weight: bold;
+             color: #FE4040;
+             font-size: 150%;
          }
          #info {
-         color: #ffffff;
+             color: #EBE2CA;
          }
          #random {
-         font-size: 24px;
+             font-size: 24px;
          }
          #images {
-         margin: 20px 0;
+             margin: 20px 0;
          }
          #images a:visited {
-         opacity: 0.3;
-         display: inline-block;
+             opacity: 0.3;
+             display: inline-block;
          }
          #images img {
-         margin-right: 5px;
-         border: 2px solid #000000;
+             margin-right: 5px;
+             border: 2px solid #3D362E;
          }
          #images img:hover {
-         border: 2px solid #ffffff;
+             border: 2px solid #98CDFF;
+         }
+         .collapsible {
+             background-color: #eee;
+             color: #444;
+             cursor: pointer;
+             padding: 18px;
+             width: 100%;
+             border: none;
+             text-align: left;
+             outline: none;
+             font-size: 15px;
+         }
+
+         .active, .collapsible:hover {
+             background-color: #ccc;
+         }
+
+         .content {
+             padding: 0 18px;
+             display: none;
+             overflow: hidden;
+             background-color: #f1f1f1;
          }
       </style>
    </head>
    <body>
       <center>
-         <h1>Random Imgur Images</h1>
-         <span class="warning">NSFW</span></p>
-         <p><button id="random">Load Images</button>
+         <h1>TF2CutContent's Random Imgur Image Loader</h1>
+         <p><span class="warning">WARNING: YOU WILL ENCOUNTER A LOT OF NSFW CONTENT THROUGH THIS.</span><br>
+         <span class="warning">NONE OF THESE IMAGES ARE HOSTED ON THIS SITE.</span><br>
+         <span class="warning">IF YOU ENCOUNTER ANY "HIGHLY ILLEGAL" PORNOGRAPHIC MATERIAL, PLEASE SUBMIT A <a href="https://imgur.com/removalrequest" target="_blank">REMOVAL REQUEST</a> TO IMGUR.</span></p>
+         <p><button id="random">Load Images</button></p>
          <p id="info"></p>
+          <button type="button" class="collapsible">Toggle Image Filters</button>
+          <div class="content">
+              <p>
+                 <input type="checkbox" id="monopoly" value="monopoly" name="Filter out Monopoly Man images">
+                 <label for="monopoly">Filter out Monopoly Man images</label>
+              </p>
+          </div> 
          <div id="images"></div>
       </center>
       <script type="text/javascript" src="jquery.min.js"></script>
-      <script type='text/javascript'>
+      <script type="text/javascript">
          // taken from evilinternet(?), original source long gone
-         window.num_images = 120;
+         window.num_images = 104;
          window.char_length = 5;
          //window.char_length = 7;
          
@@ -78,7 +108,7 @@
          				self.hunt(function(id) {
          					self.done++;
          					
-         					$(images_el).append("<a href=\"https://i.imgur.com/"+ id +".jpg\" target=\"_blank\" rel=\"noreferrer\"><img src=\"https://i.imgur.com/"+ id +"s.png\" height=\"110\" width=\"110\" /></a>");
+         					$(images_el).append("<a href=\"https://i.imgur.com/"+ id +"_d.webp?maxwidth=4000&fidelity=high\" target=\"_blank\" rel=\"noreferrer\"><img src=\"https://i.imgur.com/"+ id +"s.png\" height=\"110\" width=\"110\" /></a>");
          					
          					self.update();
          				});
@@ -95,6 +125,7 @@
          		},
          		
          		hunt: function(cb) {
+                                var monopoly = document.getElementById("monopoly").checked; 
          			var self = this,
          				id = self.random(window.char_length),
          				img = new Image;
@@ -107,13 +138,54 @@
          			
          			self.update();
          			
-         			img.src = "http://i.imgur.com/"+ id +"s.png";
+         			img.src = "http://i.imgur.com/"+ id +"_d.webp?maxwidth=1001&fidelity=low";
          			
          			img.onload = function() {
+                                        // Time to check the image's height and width
+                                        // Then we can filter out some of the more repetitive images
+                                        // There's quite a few types of images that keep popping up
+                                        // Eventually I will add a popup control panel where you can toggle these filters on/off yourself
          				if (((img.width == 198) && (img.height == 160)) || ((img.width == 161) && (img.height == 81))) {
-         					// assume this is an imgur error image and retry
+         					// We're going to assume images of these sizes are an imgur error images
+         					fail();
+         				} else if ((img.naturalWidth <= 32) || (img.naturalHeight <= 32)) {
+         					// Filter out tiny images whose width or height is equal to or below 32px
+         					fail();
+         				} else if (monopoly == true && ((img.naturalWidth == 298) && (img.naturalHeight == 256))) {
+         					// Filter out repetitive Monopoly Man credit card images
+         					fail();
+         				} else if (((img.naturalWidth == 652) && (img.naturalHeight == 470))) {
+         					// Filter out repetitive cellphone images v1
+         					fail();
+         				} else if (((img.naturalWidth == 225) && (img.naturalHeight == 225))) {
+         					// Filter out repetitive cellphone images v2
+         					fail();
+         				} else if (((img.naturalWidth == 399) && (img.naturalHeight == 344))) {
+         					// Filter out repetitive cellphone images v3
+         					fail();
+         				} else if (((img.naturalWidth == 760) && (img.naturalHeight == 756))) {
+         					// Filter out repetitive iPhone 5 images
+         					fail();
+         				} else if (((img.naturalWidth == 500) && (img.naturalHeight == 388))) {
+         					// Filter out repetitive iPhone 4 images
+         					fail();
+         				} else if (((img.naturalWidth == 128) && (img.naturalHeight == 128))) {
+         					// Filter out tricolor Facebook logo images
+         					fail();
+         				} else if (((img.naturalWidth == 643) && (img.naturalHeight == 88))) {
+         					// Filter out wide YouTube header images
+         					fail();
+         				} else if (((img.naturalWidth == 540) && (img.naturalHeight == 335))) {
+         					// Filter out Android Authority images
+         					fail();
+         				} else if (((img.naturalWidth == 760) && (img.naturalHeight == 475))) {
+         					// Filter out Yu-Gi-Oh online game images
+         					fail();
+         				} else if (((img.naturalWidth == 100) && (img.naturalHeight == 75))) {
+         					// Filter out those weird monster game "land" images
          					fail();
          				} else {
+                                                // We got a good image, send it!
          					cb(id);
          				}
          			}
@@ -153,6 +225,22 @@
          		Imgur.fetch(window.num_images);
          	});
          });
+      </script>
+      <script type="text/javascript">
+       var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
       </script>
    </body>
 </html>
