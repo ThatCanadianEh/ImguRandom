@@ -45,7 +45,7 @@
              padding: 6px;
              width: 50%;
              border: none;
-             text-align: left;
+             text-align: center;
              outline: none;
              font-size: 15px;
          }
@@ -59,7 +59,11 @@
              width: 50%;
              display: none;
              overflow: hidden;
+             text-align: left;
              background-color: #3D362E;
+         }
+         .content a {
+             color: #98CDFF;
          }
       </style>
    </head>
@@ -73,10 +77,20 @@
          <p id="info"></p>
           <button type="button" class="collapsible">Toggle Image Filters</button>
           <div class="content">
+              <input type="checkbox" id="tiny" value="tiny" name="Filter out images with a width/height of 32px or less">
+              <label for="tiny">Filter out images with a width/height of 32px or less</label><br>
               <input type="checkbox" id="monopoly" value="monopoly" name="Filter out Monopoly Man images">
               <label for="monopoly">Filter out <a href="https://raw.githubusercontent.com/TF2CutContentWiki/randomimgur-modified/main/filteredimageexamples/925PX_d.webp" target="_blank">Monopoly Man images</a></label><br>
-              <input type="checkbox" id="tiny" value="tiny" name="Filter out images with a width/height of 32px or less">
-              <label for="tiny">Filter out images with a width/height of 32px or less</label>
+              <input type="checkbox" id="iphone4" value="iphone4" name="Filter out iPhone 4 images">
+              <label for="iphone4">Filter out <a href="https://raw.githubusercontent.com/TF2CutContentWiki/randomimgur-modified/main/filteredimageexamples/f5pIg_d.webp" target="_blank">iPhone 4 images</a></label><br>
+              <input type="checkbox" id="iphone5" value="iphone5" name="Filter out iPhone 5 images">
+              <label for="iphone5">Filter out <a href="https://raw.githubusercontent.com/TF2CutContentWiki/randomimgur-modified/main/filteredimageexamples/1kBGm_d.webp" target="_blank">iPhone 5 images</a></label><br>
+              <input type="checkbox" id="cellphone1" value="cellphone1" name="Filter out repetitive cellphone images #1">
+              <label for="cellphone1">Filter out repetitive <a href="https://raw.githubusercontent.com/TF2CutContentWiki/randomimgur-modified/main/filteredimageexamples/B3Q6Y_d.webp" target="_blank">cellphone images</a> #1</label><br>
+              <input type="checkbox" id="cellphone2" value="cellphone2" name="Filter out repetitive cellphone images #2">
+              <label for="cellphone2">Filter out repetitive <a href="https://raw.githubusercontent.com/TF2CutContentWiki/randomimgur-modified/main/filteredimageexamples/n3Mq1_d.webp" target="_blank">cellphone images</a> #2</label><br>
+              <input type="checkbox" id="cellphone3" value="cellphone3" name="Filter out repetitive cellphone images #3">
+              <label for="cellphone3">Filter out repetitive <a href="https://raw.githubusercontent.com/TF2CutContentWiki/randomimgur-modified/main/filteredimageexamples/OqXB0_d.webp" target="_blank">cellphone images</a> #3</label><br>
           </div> 
          <div id="images"></div>
       </center>
@@ -127,7 +141,12 @@
          		
          		hunt: function(cb) {
                                 var monopoly = document.getElementById("monopoly").checked;
-                                var tiny = document.getElementById("tiny").checked; 
+                                var tiny = document.getElementById("tiny").checked;
+                                var iphone4 = document.getElementById("iphone4").checked;
+                                var iphone5 = document.getElementById("iphone5").checked;
+                                var cellphone1 = document.getElementById("cellphone1").checked;
+                                var cellphone2 = document.getElementById("cellphone2").checked;
+                                var cellphone3 = document.getElementById("cellphone3").checked;
          			var self = this,
          				id = self.random(window.char_length),
          				img = new Image;
@@ -156,19 +175,19 @@
          				} else if (monopoly == true && ((img.naturalWidth == 298) && (img.naturalHeight == 256))) {
          					// Filter out repetitive Monopoly Man credit card images
          					fail();
-         				} else if (((img.naturalWidth == 652) && (img.naturalHeight == 470))) {
+         				} else if (cellphone1 == true && ((img.naturalWidth == 652) && (img.naturalHeight == 470))) {
          					// Filter out repetitive cellphone images v1
          					fail();
-         				} else if (((img.naturalWidth == 225) && (img.naturalHeight == 225))) {
+         				} else if (cellphone2 == true && ((img.naturalWidth == 225) && (img.naturalHeight == 225))) {
          					// Filter out repetitive cellphone images v2
          					fail();
-         				} else if (((img.naturalWidth == 399) && (img.naturalHeight == 344))) {
+         				} else if (cellphone3 == true && ((img.naturalWidth == 399) && (img.naturalHeight == 344))) {
          					// Filter out repetitive cellphone images v3
          					fail();
-         				} else if (((img.naturalWidth == 760) && (img.naturalHeight == 756))) {
+         				} else if (iphone5 == true && ((img.naturalWidth == 760) && (img.naturalHeight == 756))) {
          					// Filter out repetitive iPhone 5 images
          					fail();
-         				} else if (((img.naturalWidth == 500) && (img.naturalHeight == 388))) {
+         				} else if (iphone4 == true && ((img.naturalWidth == 500) && (img.naturalHeight == 388))) {
          					// Filter out repetitive iPhone 4 images
          					fail();
          				} else if (((img.naturalWidth == 128) && (img.naturalHeight == 128))) {
