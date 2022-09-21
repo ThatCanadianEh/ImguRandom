@@ -92,7 +92,7 @@
          				return (~~(v / (interval * 1e5))) / 100;
          			}
          			
-         			$(info_el).html( ((this.done < this.total)?"Loading... "+ this.done +"/"+ this.total +" ("+ this.failures +" failures"+") ":"Done. ") + "["+ speed((this.failures + this.done)) +" req/s - "+ speed(this.done) +" img/s]");
+         			$(info_el).html( ((this.done < this.total)?"Loading... "+ this.done +"/"+ this.total +" ("+ this.failures +" failures"+") ":"Done. ")");
          		},
          		
          		hunt: function(cb) {
@@ -111,42 +111,51 @@
          			img.src = "http://i.imgur.com/"+ id +"_d.webp?maxwidth=1001&fidelity=low";
          			
          			img.onload = function() {
-                                        // Gotta be a better way to do this.
-                                        // Plus, some of the later filtered images aren't being filtered sometimes.
+                                        // Time to check the image's height and width
+                                        // Then we can filter out some of the more repetitive images
+                                        // There's quite a few types of images that keep popping up
+                                        // Eventually I will add a popup control panel where you can toggle these filters on/off yourself
          				if (((img.width == 198) && (img.height == 160)) || ((img.width == 161) && (img.height == 81))) {
-         					// assume this is an imgur error image and retry
+         					// We're going to assume images of these sizes are an imgur error images
          					fail();
          				} else if ((img.naturalWidth <= 32) || (img.naturalHeight <= 32)) {
-         					// fuck off tiny images
+         					// Filter out tiny images whose width or height is equal to or below 32px
          					fail();
          				} else if (((img.naturalWidth == 298) && (img.naturalHeight == 256))) {
-         					// fuck off monopoly man
+         					// Filter out repetitive Monopoly Man credit card images
          					fail();
          				} else if (((img.naturalWidth == 652) && (img.naturalHeight == 470))) {
-         					// fuck off cellphone picture
+         					// Filter out repetitive cellphone images v1
          					fail();
          				} else if (((img.naturalWidth == 225) && (img.naturalHeight == 225))) {
-         					// fuck off other cellphone picture
+         					// Filter out repetitive cellphone images v2
          					fail();
          				} else if (((img.naturalWidth == 399) && (img.naturalHeight == 344))) {
-         					// fuck off other other cellphone picture
+         					// Filter out repetitive cellphone images v3
          					fail();
          				} else if (((img.naturalWidth == 760) && (img.naturalHeight == 756))) {
-         					// fuck off iPhone 5 picture
+         					// Filter out repetitive iPhone 5 images
          					fail();
          				} else if (((img.naturalWidth == 500) && (img.naturalHeight == 388))) {
-         					// fuck off iPhone 4 picture
+         					// Filter out repetitive iPhone 4 images
          					fail();
          				} else if (((img.naturalWidth == 128) && (img.naturalHeight == 128))) {
-         					// fuck off tricolor Facebook logo picture
+         					// Filter out tricolor Facebook logo images
          					fail();
          				} else if (((img.naturalWidth == 643) && (img.naturalHeight == 88))) {
-         					// fuck off wide YouTube header image
+         					// Filter out wide YouTube header images
          					fail();
          				} else if (((img.naturalWidth == 540) && (img.naturalHeight == 335))) {
-         					// fuck off Android Authority image
+         					// Filter out Android Authority images
+         					fail();
+         				} else if (((img.naturalWidth == 1024) && (img.naturalHeight == 640))) {
+         					// Filter out Yu-Gi-Oh online game images
+         					fail();
+         				} else if (((img.naturalWidth == 100) && (img.naturalHeight == 75))) {
+         					// Filter out those weird monster game "land" images
          					fail();
          				} else {
+                                                // We got a good image, send it!
          					cb(id);
          				}
          			}
