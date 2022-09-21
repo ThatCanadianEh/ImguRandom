@@ -1,6 +1,9 @@
 # randomimgur-modified
 A modified version of the random Imgur image loader from newroman.net/imgur
 
+# Want to try this?
+[Click here!](https://tf2cutcontentwiki.github.io/randomimgur-modified/)
+
 # Tweaks
 - Added some hardcoded width/height filters to filter out various images that were uploaded to Imgur by the thousands and often flood the results.
 - Modified how the hunt function's check works
