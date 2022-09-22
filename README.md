@@ -9,3 +9,6 @@ A modified version of the random Imgur image loader from newroman.net/imgur
 # Planned Features
 - A popout "favorites" panel where you can save images you find for future reference.
   - This feature will likely also use LocalStorage to save your favorites between browser sessions, but I may also add an "export" button to generate and save a TXT file containing a list of all your favorites that can then later be re-imported to your favorites.
+- Customizations panel where you can customize how the site functions, to an extent. Will include, but will not be limited to;
+  - Slider to set the # of images to load from 1 to <upper limit not yet determined, probably 100>.
+  - Slider or text box to set the size of the images in the generated list of images. Default hardcoded image size at the moment is 110x110.
