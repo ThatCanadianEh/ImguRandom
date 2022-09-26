@@ -3,81 +3,20 @@
    <head>
       <meta http-equiv="content-type" content="text/html; charset=UTF-8">
       <title>TF2CutContent's Random Imgur Image Loader</title>
-      <style type='text/css'>
-         body {
-             background-color: #24201B;
-             color: #EBE2CA;
-             overflow-y: visible;
-             font-family: Arial;
-         }
-         h1 {
-             color: #EBE2CA;
-         }
-         .warning {
-             font-weight: bold;
-             color: #FE4040;
-             font-size: 150%;
-         }
-         #info {
-             color: #EBE2CA;
-         }
-         #random {
-             font-size: 24px;
-         }
-         #images {
-             margin: 20px 0;
-         }
-         #images a:visited {
-             opacity: 0.3;
-             display: inline-block;
-         }
-         #images img {
-             margin-right: 5px;
-             border: 2px solid #3D362E;
-         }
-         #images img:hover {
-             border: 2px solid #98CDFF;
-         }
-         .collapsible {
-             background-color: #3D362E;
-             color: #EBE2CA;
-             cursor: pointer;
-             padding: 6px;
-             width: 50%;
-             border: none;
-             text-align: center;
-             outline: none;
-             font-size: 15px;
-         }
-
-         .active, .collapsible:hover {
-             background-color: #3D362E;
-         }
-
-         .content {
-             padding: 0 6px;
-             width: 50%;
-             display: none;
-             overflow: hidden;
-             text-align: left;
-             background-color: #3D362E;
-         }
-         .content a {
-             color: #98CDFF;
-         }
-      </style>
+      <link rel="stylesheet" href="styles.css">
    </head>
    <body>
       <center>
          <h1>TF2CutContent's Random Imgur Image Loader</h1>
-         <h1>New Feature Testing Version</h1>
+         <h1 style="color:#FF4040;">New Feature Test Version</h1>
          <p><span class="warning">WARNING: YOU WILL ENCOUNTER A LOT OF NSFW CONTENT THROUGH THIS.</span><br>
          <span class="warning">NONE OF THESE IMAGES ARE HOSTED ON THIS SITE.</span><br>
          <span class="warning">IF YOU ENCOUNTER ANY "HIGHLY ILLEGAL" PORNOGRAPHIC MATERIAL, PLEASE SUBMIT A <a href="https://imgur.com/removalrequest" target="_blank">REMOVAL REQUEST</a> TO IMGUR.</span></p>
-         <p><button id="random">Load Images</button></p>
          <p id="info"></p>
           <button type="button" class="collapsible"><b>Toggle Image Filters</b> <sup>(click to show/hide)</sup></button>
           <div class="content">
+              <input type="checkbox" id="showFiltered" value="showFiltered" name="Display filtered images in a separate section?">
+              <label for="showFiltered">Display filtered images in a separate section?</label><br>
               <input type="checkbox" id="tiny" value="tiny" name="Filter out images with a width/height of 32px or less" checked>
               <label for="tiny">Filter out images with a width/height of 32px or less</label><br>
               <input type="checkbox" id="monopoly" value="monopoly" name="Filter out Monopoly Man images" checked>
@@ -112,203 +51,17 @@
               <label for="taringa">Filter out <a href="https://raw.githubusercontent.com/TF2CutContentWiki/randomimgur-modified/main/filteredimageexamples/w1X2q_d.webp" target="_blank">Taringa images</a></label><br>
               <input type="checkbox" id="austra" value="austra" name="Filter out Austra images" checked>
               <label for="austra">Filter out <a href="https://raw.githubusercontent.com/TF2CutContentWiki/randomimgur-modified/main/filteredimageexamples/EToMA_d.webp" target="_blank">Austra images</a></label><br>
-          </div> 
+          </div>
+          <p><button id="random">Load Images</button></p>
+          <hr>
          <div id="images"></div>
+         <hr>
+         <h1>Filtered Images</h1>
+         <span class="warning">This section will be empty unless you enable the option to display filtered images. The way the filters work by checking an images width & height, some images can be filtered by accident as a result. This section was added to allow you to see what was being filtered out</span>
+         <div id="filteredimages"></div>
       </center>
       <script type="text/javascript" src="jquery.min.js"></script>
-      <script type="text/javascript">
-         // taken from evilinternet(?), original source long gone
-         window.num_images = 104;
-         window.char_length = 5;
-         //window.char_length = 7;
-         
-         imgurcache = new Array();
-         
-         jQuery(document).ready(function($) {
-         	var info_el = $("#info"),
-         		images_el = $("#images");
-         	
-         	var Imgur = {
-         		fetch: function(num) {
-         			var self = this,
-         				x;
-         			
-         			self.total = num;
-         			self.done = 0;
-         			self.failures = 0;
-         			self.start =+ new Date;
-         			
-         			$(images_el).empty();
-         			
-         			for(x = 0; x < num; x++) {
-         				self.hunt(function(id) {
-         					self.done++;
-         					
-         					$(images_el).append("<a href=\"https://i.imgur.com/"+ id +"_d.webp?maxwidth=4000&fidelity=high\" target=\"_blank\" rel=\"noreferrer\"><img src=\"https://i.imgur.com/"+ id +"s.png\" height=\"110\" width=\"110\" /></a>");
-         					
-         					self.update();
-         				});
-         			}
-         		},
-         		update: function() {
-         			var interval = (new Date - this.start);
-         			
-         			function speed(v) {
-         				return (~~(v / (interval * 1e5))) / 100;
-         			}
-         			
-         			$(info_el).html( ((this.done < this.total)?"Loading... "+ this.done +"/"+ this.total +" ("+ this.failures +" failures"+") ":"Done. ") + "["+ speed((this.failures + this.done)) +" req/s - "+ speed(this.done) +" img/s]");
-         		},
-         		
-         		hunt: function(cb) {
-                                var monopoly = document.getElementById("monopoly").checked;
-                                var tiny = document.getElementById("tiny").checked;
-                                var iphone4 = document.getElementById("iphone4").checked;
-                                var iphone5 = document.getElementById("iphone5").checked;
-                                var cellphone1 = document.getElementById("cellphone1").checked;
-                                var cellphone2 = document.getElementById("cellphone2").checked;
-                                var cellphone3 = document.getElementById("cellphone3").checked;
-                                var facebook = document.getElementById("facebook").checked;
-                                var youtube = document.getElementById("youtube").checked;
-                                var monster1 = document.getElementById("monster1").checked;
-                                var monster2 = document.getElementById("monster2").checked;
-                                var yugioh = document.getElementById("yugioh").checked;
-                                var android = document.getElementById("android").checked;
-                                var banner1 = document.getElementById("banner1").checked;
-                                var banner2 = document.getElementById("banner2").checked;
-                                var taringa = document.getElementById("taringa").checked;
-                                var austra = document.getElementById("austra").checked;
-
-         			var self = this,
-         				id = self.random(window.char_length),
-         				img = new Image;
-         			
-         			function fail() {
-         				self.failures++;
-         				self.update();
-         				self.hunt(cb);
-         			}
-         			
-         			self.update();
-         			
-         			img.src = "http://i.imgur.com/"+ id +"_d.webp?maxwidth=1001&fidelity=low";
-         			
-         			img.onload = function() {
-                                        // Time to check the image's height and width
-                                        // Then we can filter out some of the more repetitive images
-                                        // There's quite a few types of images that keep popping up
-                                        // Eventually I will add a popup control panel where you can toggle these filters on/off yourself
-         				if (((img.width == 198) && (img.height == 160)) || ((img.width == 161) && (img.height == 81))) {
-         					// We're going to assume images of these sizes are an imgur error images
-         					fail();
-         				} else if (tiny == true && (img.naturalWidth <= 32) || (img.naturalHeight <= 32)) {
-         					// Filter out tiny images whose width or height is equal to or below 32px
-         					fail();
-         				} else if (monopoly == true && ((img.naturalWidth == 298) && (img.naturalHeight == 256))) {
-         					// Filter out repetitive Monopoly Man credit card images
-         					fail();
-         				} else if (cellphone1 == true && ((img.naturalWidth == 652) && (img.naturalHeight == 470))) {
-         					// Filter out repetitive cellphone images v1
-         					fail();
-         				} else if (cellphone2 == true && ((img.naturalWidth == 225) && (img.naturalHeight == 225))) {
-         					// Filter out repetitive cellphone images v2
-         					fail();
-         				} else if (cellphone3 == true && ((img.naturalWidth == 399) && (img.naturalHeight == 344))) {
-         					// Filter out repetitive cellphone images v3
-         					fail();
-         				} else if (iphone5 == true && ((img.naturalWidth == 760) && (img.naturalHeight == 756))) {
-         					// Filter out repetitive iPhone 5 images
-         					fail();
-         				} else if (iphone4 == true && (((img.naturalWidth == 500) && (img.naturalHeight == 388)) || ((img.naturalWidth == 90) && (img.naturalHeight == 69)))) {
-         					// Filter out repetitive iPhone 4 images
-         					fail();
-         				} else if (facebook == true && ((img.naturalWidth == 128) && (img.naturalHeight == 128))) {
-         					// Filter out tricolor Facebook logo images
-         					fail();
-         				} else if (youtube == true && (((img.naturalWidth == 643) && (img.naturalHeight == 88)) || ((img.naturalWidth == 642) && (img.naturalHeight == 89)) || ((img.naturalWidth == 640) && (img.naturalHeight == 54)) || ((img.naturalWidth == 646) && (img.naturalHeight == 88)) || ((img.naturalWidth == 650) && (img.naturalHeight == 60)))) {
-         					// Filter out wide YouTube header images
-         					fail();
-         				} else if (android == true && ((img.naturalWidth == 540) && (img.naturalHeight == 335))) {
-         					// Filter out Android Authority images
-         					fail();
-         				} else if (yugioh == true && ((img.naturalWidth == 760) && (img.naturalHeight == 475))) {
-         					// Filter out Yu-Gi-Oh online game images
-         					fail();
-         				} else if (monster1 == true && ((img.naturalWidth == 100) && (img.naturalHeight == 75))) {
-         					// Filter out those weird monster game "land" images
-         					fail();
-         				} else if (monster2 == true && ((img.naturalWidth == 110) && (img.naturalHeight == 128))) {
-         					// Filter out those weird monster game "creature" images
-         					fail();
-         				} else if (banner1 == true && ((img.naturalWidth == 728) && (img.naturalHeight == 90))) {
-         					// Filter out Bannermaker images #1
-         					fail();
-         				} else if (banner2 == true && ((img.naturalWidth == 180) && (img.naturalHeight == 150))) {
-         					// Filter out Bannermaker images #2
-         					fail();
-         				} else if (taringa == true && (((img.naturalWidth == 49) && (img.naturalHeight == 33)) || ((img.naturalWidth == 750) && (img.naturalHeight == 123)) || ((img.naturalWidth == 666) && (img.naturalHeight == 69)) || ((img.naturalWidth == 700) && (img.naturalHeight == 60)) || ((img.naturalWidth == 309) && (img.naturalHeight == 150)) || ((img.naturalWidth == 700) && (img.naturalHeight == 141)))) {
-         					// Filter out repetitive Taringa images
-         					fail();
-         				} else if (austra == true && ((img.naturalWidth == 530) && (img.naturalHeight == 40))) {
-         					// Filter out repetitive Austra images
-         					fail();
-         				} else {
-                                                // We got a good image, send it!
-         					cb(id);
-         				}
-         			}
-         			
-         			img.onerror = fail;
-         		},
-         		random: function(len) {
-         			var text = new Array(),
-         				possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
-         				i;
-         			
-         			for (i = 0; i < len; i++) {
-         				imgurchar = possible.charAt(Math.floor((Math.random() * possible.length)));
-         				
-         				if(-1 == text.indexOf(imgurchar)) {
-         					text.push(imgurchar);
-         				} else {
-         					i--;
-         				}
-         			}
-         			
-         			text = text.join("");
-         			
-         			if(-1 == imgurcache.indexOf(text)) {
-         				imgurcache.push(text);
-         				
-         				return text;
-         			} else {
-         				self.random(window.char_length);
-         				
-         				return false;
-         			}
-         		}
-         	};
-         	
-         	$("#random").on('click', function() {
-         		Imgur.fetch(window.num_images);
-         	});
-         });
-      </script>
-      <script type="text/javascript">
-       var coll = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
-      </script>
+      <script type="text/javascript" src="collapse.js"></script>      
+      <script type="text/javascript" src="imgurandom.js"></script>
    </body>
 </html>
