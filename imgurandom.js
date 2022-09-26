@@ -62,7 +62,6 @@ jQuery(document).ready(function($) {
 				{
 					$(filteredimages_el).append("<a href=\"https://i.imgur.com/" + id + "_d.webp?maxwidth=4000&fidelity=high\" target=\"_blank\" rel=\"noreferrer\"><img src=\"https://i.imgur.com/" + id + "s.png\" height=\"110\" width=\"110\" /></a>");
 				}
-                                fail();
 			}
 
 			self.update();
@@ -80,24 +79,31 @@ jQuery(document).ready(function($) {
 				} else if (tiny == true && (img.naturalWidth <= 32) || (img.naturalHeight <= 32)) {
 					// Filter out tiny images whose width or height is equal to or below 32px.
 					logFilteredImage();
+					fail();
 				} else if (monopoly == true && ((img.naturalWidth == 298) && (img.naturalHeight == 256))) {
 					// Filter out repetitive Monopoly Man credit card images.
 					logFilteredImage();
+					fail();
 				} else if (cellphone == true && (((img.naturalWidth == 652) && (img.naturalHeight == 470)) || ((img.naturalWidth == 225) && (img.naturalHeight == 225)) || ((img.naturalWidth == 399) && (img.naturalHeight == 344)) || ((img.naturalWidth == 760) && (img.naturalHeight == 756)) || ((img.naturalWidth == 500) && (img.naturalHeight == 388)) || ((img.naturalWidth == 90) && (img.naturalHeight == 69)) || ((img.naturalWidth == 540) && (img.naturalHeight == 335)))) {
 					// Filter out repetitive cellphone images.
 					logFilteredImage();
+					fail();
 				} else if (facebook == true && ((img.naturalWidth == 128) && (img.naturalHeight == 128))) {
 					// Filter out tricolor Facebook logo images
 					logFilteredImage();
+					fail();
 				} else if (youtube == true && (((img.naturalWidth == 643) && (img.naturalHeight == 88)) || ((img.naturalWidth == 642) && (img.naturalHeight == 89)) || ((img.naturalWidth == 640) && (img.naturalHeight == 54)) || ((img.naturalWidth == 646) && (img.naturalHeight == 88)) || ((img.naturalWidth == 650) && (img.naturalHeight == 60)))) {
 					// Filter out wide YouTube header images
 					logFilteredImage();
+					fail();
 				} else if (yugioh == true && ((img.naturalWidth == 760) && (img.naturalHeight == 475))) {
 					// Filter out Yu-Gi-Oh online game images
 					logFilteredImage();
+					fail();
 				} else if (monster1 == true && (((img.naturalWidth == 100) && (img.naturalHeight == 75)) || ((img.naturalWidth == 110) && (img.naturalHeight == 128)))) {
 					// Filter out those weird monster game "land" images
 					logFilteredImage();
+					fail();
 				} else {
 					// We got a good image, send it!
 					cb(id);
