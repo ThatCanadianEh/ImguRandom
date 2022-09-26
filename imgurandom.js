@@ -111,7 +111,7 @@ jQuery(document).ready(function($) {
 					    $(filteredimages_el).append("<a href=\"https://i.imgur.com/" + id + "_d.webp?maxwidth=4000&fidelity=high\" target=\"_blank\" rel=\"noreferrer\"><img src=\"https://i.imgur.com/" + id + "s.png\" height=\"110\" width=\"110\" /></a>");
 				        }
 					fail();
-				} else if (monster1 == true && (((img.naturalWidth == 100) && (img.naturalHeight == 75)) || ((img.naturalWidth == 110) && (img.naturalHeight == 128)))) {
+				} else if (monster == true && (((img.naturalWidth == 100) && (img.naturalHeight == 75)) || ((img.naturalWidth == 110) && (img.naturalHeight == 128)))) {
 					// Filter out those weird monster game "land" images
 					if (showFiltered == true)
 				        {
