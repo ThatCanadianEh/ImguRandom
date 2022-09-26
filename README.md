@@ -4,7 +4,6 @@ A modified version of the random Imgur image loader from newroman.net/imgur
 **Have an idea for a new feature that you think would be useful? Or perhaps you've found a bug? Either way, submit an Issue report and I'll take a look at it!**
 
 # Try It Out!
-**Currently broken and doesn't seem to work right. Only seems to load filtered images if you enable the filtered image display. Will look at this later and try to undo whatever it was I did that broke it.**
 [Click here!](https://tf2cutcontentwiki.github.io/randomimgur-modified/)
 
 # Planned Features
