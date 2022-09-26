@@ -1,11 +1,15 @@
 // taken from evilinternet(?), original source long gone
-window.num_images = 104;
+// then taken from newroman.net/imgur by TF2CutContentWiki
+// and heavily modified by TF2CutContentWiki as well
+
+//window.num_images = 104;
 window.char_length = 5;
 //window.char_length = 7;
 
 imgurcache = new Array();
 
 jQuery(document).ready(function($) {
+        var numImages = document.getElementById("numImages"); 
 	var info_el = $("#info"),
 		images_el = $("#images"),
 		filteredimages_el = $("#filteredimages");
@@ -155,6 +159,6 @@ jQuery(document).ready(function($) {
 	};
 
 	$("#random").on('click', function() {
-		Imgur.fetch(window.num_images);
+		Imgur.fetch(numImages.value);
 	});
 });
