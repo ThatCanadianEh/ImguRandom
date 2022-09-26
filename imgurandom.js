@@ -18,7 +18,6 @@ jQuery(document).ready(function($) {
 			self.total = num;
 			self.done = 0;
 			self.failures = 0;
-			self.start = +new Date;
 
 			$(images_el).empty();
 			$(filteredimages_el).empty();
