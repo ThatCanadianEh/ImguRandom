@@ -12,7 +12,7 @@
          <span class="warning">NONE OF THESE IMAGES ARE HOSTED ON THIS SITE.</span><br>
          <span class="warning">IF YOU ENCOUNTER ANY "HIGHLY ILLEGAL" PORNOGRAPHIC MATERIAL, PLEASE SUBMIT A <a href="https://imgur.com/removalrequest" target="_blank">REMOVAL REQUEST</a> TO IMGUR.</span></p>
          <p id="info"></p>
-          <button type="button" class="collapsible"><b>Toggle Image Filters</b> <sup>(click to show/hide)</sup></button>
+          <button type="button" class="collapsible"><b>Options</b> <sup>(click to show/hide)</sup></button>
           <div class="content">
               <input type="checkbox" id="showFiltered" value="showFiltered" name="Display filtered images in a separate section?">
               <label for="showFiltered">Display filtered images in a separate section?</label><br>
@@ -31,7 +31,7 @@
               <input type="checkbox" id="yugioh" value="yugioh" name="Filter out Yugioh gameplay images" checked>
               <label for="yugioh">Filter out Yugioh gameplay images</label><br>
               <div class="slidecontainer">
-                  <label for="numImages"># of images to load:</label> <b style="color:#FF4040;"><output id="numImagesOut">100</output></b><br>
+                  <label for="numImages"># of images to load (min 1, max 500):</label> <b style="color:#FF4040;"><output id="numImagesOut">100</output></b><br>
                   <input type="range" min="1" max="500" value="100" class="slider" id="numImages" onchange="numImagesOut.value=value">
               </div>
           </div>
