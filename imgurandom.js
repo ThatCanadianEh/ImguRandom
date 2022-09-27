@@ -17,15 +17,6 @@ jQuery(document).ready(function($) {
 
 	var Imgur = {
 		fetch: function(num) {
-                        var monopoly = document.getElementById("monopoly").checked;
-			var tiny = document.getElementById("tiny").checked;
-			var cellphone = document.getElementById("cellphone").checked;
-			var facebook = document.getElementById("facebook").checked;
-			var youtube = document.getElementById("youtube").checked;
-			var monster = document.getElementById("monster").checked;
-			var yugioh = document.getElementById("yugioh").checked;
-			var showFiltered = document.getElementById("showFiltered").checked;
-                        var numImages = document.getElementById("numImages"); 
 			var self = this,
 				x;
 
@@ -51,6 +42,15 @@ jQuery(document).ready(function($) {
 		},
 
 		hunt: function(cb) {
+                        var monopoly = document.getElementById("monopoly").checked;
+			var tiny = document.getElementById("tiny").checked;
+			var cellphone = document.getElementById("cellphone").checked;
+			var facebook = document.getElementById("facebook").checked;
+			var youtube = document.getElementById("youtube").checked;
+			var monster = document.getElementById("monster").checked;
+			var yugioh = document.getElementById("yugioh").checked;
+			var showFiltered = document.getElementById("showFiltered").checked;
+                        var numImages = document.getElementById("numImages");
 			var self = this,
 				id = self.random(window.char_length),
 				img = new Image;
