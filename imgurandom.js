@@ -9,13 +9,23 @@ window.char_length = 5;
 imgurcache = new Array();
 
 jQuery(document).ready(function($) {
-        var numImages = document.getElementById("numImages"); 
+//      var prevImages = new Array();
+
 	var info_el = $("#info"),
 		images_el = $("#images"),
 		filteredimages_el = $("#filteredimages");
 
 	var Imgur = {
 		fetch: function(num) {
+                        var monopoly = document.getElementById("monopoly").checked;
+			var tiny = document.getElementById("tiny").checked;
+			var cellphone = document.getElementById("cellphone").checked;
+			var facebook = document.getElementById("facebook").checked;
+			var youtube = document.getElementById("youtube").checked;
+			var monster = document.getElementById("monster").checked;
+			var yugioh = document.getElementById("yugioh").checked;
+			var showFiltered = document.getElementById("showFiltered").checked;
+                        var numImages = document.getElementById("numImages"); 
 			var self = this,
 				x;
 
@@ -41,29 +51,29 @@ jQuery(document).ready(function($) {
 		},
 
 		hunt: function(cb) {
-			var monopoly = document.getElementById("monopoly").checked;
-			var tiny = document.getElementById("tiny").checked;
-			var cellphone = document.getElementById("cellphone").checked;
-			var facebook = document.getElementById("facebook").checked;
-			var youtube = document.getElementById("youtube").checked;
-			var monster = document.getElementById("monster").checked;
-			var yugioh = document.getElementById("yugioh").checked;
-			var showFiltered = document.getElementById("showFiltered").checked;
-
 			var self = this,
 				id = self.random(window.char_length),
 				img = new Image;
 
+                        // Sub-function: Failed to get a proper image
 			function fail() {
+                                // Increase failure count
 				self.failures++;
+
+                                // Update the info for how many images have been loaded
 				self.update();
+
+                                // Hunt for a new image
 				self.hunt(cb);
 			}
 
+                        // Update the info for how many IMGs have been loaded
 			self.update();
 
+                        // Put together the src url for the image we want to check
 			img.src = "http://i.imgur.com/" + id + "_d.webp?maxwidth=1001&fidelity=low";
 
+                        // Load the image
 			img.onload = function() {
 				// Time to check the image's height and width
 				// Then we can filter out some of the more repetitive images
