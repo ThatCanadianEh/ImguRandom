@@ -9,7 +9,7 @@ window.char_length = 5;
 imgurcache = new Array();
 
 jQuery(document).ready(function($) {
-        var showFiltered = document.getElementById("showFiltered").checked;
+        var numImages = document.getElementById("numImages");
 //      var prevImages = new Array();
 
 	var info_el = $("#info"),
@@ -50,7 +50,7 @@ jQuery(document).ready(function($) {
 			var youtube = document.getElementById("youtube").checked;
 			var monster = document.getElementById("monster").checked;
 			var yugioh = document.getElementById("yugioh").checked;
-                        var numImages = document.getElementById("numImages");
+                        var showFiltered = document.getElementById("showFiltered").checked;
 			var self = this,
 				id = self.random(window.char_length),
 				img = new Image;
