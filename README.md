@@ -1,10 +1,10 @@
-# randomimgur-modified
+# ImguRandom
 A modified version of the random Imgur image loader from newroman.net/imgur
 
 **Have an idea for a new feature that you think would be useful? Or perhaps you've found a bug? Either way, submit an Issue report and I'll take a look at it!**
 
 # Try It Out!
-[Click here!](https://tf2cutcontentwiki.github.io/randomimgur-modified/)
+[Click here!](https://tf2cutcontentwiki.github.io/ImguRandom/index.html)
 
 # Planned Features
 - A popout "favorites" panel where you can save images you find for future reference.
