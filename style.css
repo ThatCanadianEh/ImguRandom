@@ -1,12 +1,19 @@
+:root {
+    --color-body: hsl(241, 51%, 16%);
+    --color-white-90: hsl(0, 0%, 90%);
+    --color-gradient-left: hsl(204, 49%, 33%);
+    --color-gradient-right: hsl(140, 37%, 39%);
+}
+
 body {
-	background-color: #24201B;
-	color: #EBE2CA;
+	background-color: var(--color-body);
+	color: var(--color-white-90);
 	overflow-y: visible;
 	font-family: Arial;
 }
 
 h1 {
-	color: #EBE2CA;
+	color: var(--color-white-90);
 }
 
 .warning {
@@ -16,7 +23,7 @@ h1 {
 }
 
 #info {
-	color: #EBE2CA;
+	color: var(--color-white-90);
 }
 
 #random {
@@ -42,18 +49,13 @@ h1 {
 }
 
 .collapsible {
-	background-color: #3D362E;
-	color: #EBE2CA;
+	background: linear-gradient(90deg, var(--color-gradient-left) 0%, var(--color-gradient-right) 100%);
+	color: var(--color-white-90);
 	padding: 6px;
 	width: 50%;
-	border: 2px solid #1B140C;
 	text-align: center;
 	outline: none;
 	font-size: 15px;
-}
-
-.active, .collapsible:hover {
-	background-color: #4E473F;
 }
 
 .content {
