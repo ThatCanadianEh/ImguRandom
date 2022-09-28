@@ -4,9 +4,7 @@ A modified version of the random Imgur image loader from newroman.net/imgur
 **Have an idea for a new feature that you think would be useful? Or perhaps you've found a bug? Either way, submit an Issue report and I'll take a look at it!**
 
 # Try It Out!
-~~[Click here!](https://tf2cutcontentwiki.github.io/ImguRandom/index.html)~~
-
-**Site will be unavailable for a little bit while I get the Custom Domain option for this repo's Github Pages set up correctly.**
+[Click here!](https://imgurandom.com)
 
 # Planned Features
 - A popout "favorites" panel where you can save images you find for future reference.
