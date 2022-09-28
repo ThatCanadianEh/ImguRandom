@@ -3,6 +3,7 @@
     --color-white-90: hsl(0, 0%, 90%);
     --color-gradient-left: hsl(204, 49%, 33%);
     --color-gradient-right: hsl(140, 37%, 39%);
+    --color-dark: hsl(230, 5%, 22%);
 }
 
 body {
@@ -41,7 +42,7 @@ h1 {
 
 #images img {
 	margin-right: 5px;
-	border: 2px solid #3D362E;
+        background-color: var(--color-dark);
 }
 
 #images img:hover {
@@ -63,8 +64,7 @@ h1 {
 	display: none;
 	overflow: hidden;
 	text-align: left;
-	background-color: #3D362E;
-	border: 2px solid #1B140C;
+	background-color: var(--color-dark);
 }
 
 a {
