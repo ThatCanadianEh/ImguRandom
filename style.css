@@ -49,6 +49,24 @@ h1 {
 	border: 2px solid #98CDFF;
 }
 
+#filteredimages {
+	margin: 20px 0;
+}
+
+#filteredimages a:visited {
+	opacity: 0.3;
+	display: inline-block;
+}
+
+#filteredimages img {
+	margin-right: 5px;
+        background-color: var(--color-dark);
+}
+
+#filteredimages img:hover {
+	border: 2px solid #98CDFF;
+}
+
 .collapsible {
 	background: linear-gradient(90deg, var(--color-gradient-left) 0%, var(--color-gradient-right) 100%);
 	color: var(--color-white-90);
