@@ -96,7 +96,7 @@ jQuery(document).ready(function($) {
 					    $(filteredimages_el).append("<a href=\"https://i.imgur.com/" + id + "_d.webp?maxwidth=4000&fidelity=high\" target=\"_blank\" rel=\"noreferrer\"><img src=\"https://i.imgur.com/" + id + "s.png\" height=\"110\" width=\"110\" /></a>");
 				        }
 					fail();
-				} else if (cellphone == true && (((img.naturalWidth == 652) && (img.naturalHeight == 470)) || ((img.naturalWidth == 225) && (img.naturalHeight == 225)) || ((img.naturalWidth == 399) && (img.naturalHeight == 344)) || ((img.naturalWidth == 760) && (img.naturalHeight == 756)) || ((img.naturalWidth == 500) && (img.naturalHeight == 388)) || ((img.naturalWidth == 90) && (img.naturalHeight == 69)) || ((img.naturalWidth == 540) && (img.naturalHeight == 335)))) {
+				} else if (cellphone == true && (((img.naturalWidth == 652) && (img.naturalHeight == 470)) || ((img.naturalWidth == 225) && (img.naturalHeight == 225)) || ((img.naturalWidth == 399) && (img.naturalHeight == 344)) || ((img.naturalWidth == 760) && (img.naturalHeight == 756)) || ((img.naturalWidth == 500) && (img.naturalHeight == 388)) || ((img.naturalWidth == 90) && (img.naturalHeight == 69)) || ((img.naturalWidth == 449) && (img.naturalHeight == 450)) || ((img.naturalWidth == 540) && (img.naturalHeight == 335)))) {
 					// Filter out repetitive cellphone images.
 					if (showFiltered == true)
 				        {
