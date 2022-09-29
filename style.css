@@ -100,6 +100,11 @@ a:visited, a:hover {
     margin: 0 auto;
 }
 
+#sitenotice {
+    background-color: var(--color-dark);
+    padding: 6px;
+}
+
 /* Add a black background color to the top navigation */
 #myTopNav {
     display: block;
