@@ -103,6 +103,8 @@ a:visited, a:hover {
 #sitenotice {
     background-color: var(--color-dark);
     padding: 6px;
+    width: 400px;
+    margin-top: 4px;
 }
 
 /* Add a black background color to the top navigation */
