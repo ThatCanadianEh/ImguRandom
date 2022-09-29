@@ -101,9 +101,18 @@ a:visited, a:hover {
 }
 
 /* Add a black background color to the top navigation */
+#myTopNav {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 .topnav {
     background: linear-gradient(90deg, var(--color-gradient-left) 0%, var(--color-gradient-right) 100%); 
     overflow: hidden;
+    text-align: center;
+    font-size: 1.2rem;
 }
 
 /* Style the links inside the navigation bar */
