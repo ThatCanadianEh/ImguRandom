@@ -1,4 +1,6 @@
 # ImguRandom
+[![Twitter Follow](https://img.shields.io/twitter/follow/ImguRandom?label=Follow%20%40ImguRandom&logo=twitter&style=flat-square&color=blue)](https://twitter.com/ImguRandom)
+
 A modified version of the random Imgur image loader from newroman.net/imgur
 
 **Have an idea for a new feature that you think would be useful? Or perhaps you've found a bug? Either way, submit an Issue report and I'll take a look at it!**
