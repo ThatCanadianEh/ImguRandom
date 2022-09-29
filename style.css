@@ -10,93 +10,92 @@
 }
 
 body {
-	background-color: var(--color-body);
-	color: var(--color-white-90);
-	overflow-y: visible;
-	font-family: Verdana;
+    background-color: var(--color-body);
+    color: var(--color-white-90);
+    overflow-y: visible;
+    font-family: Verdana;
 }
 
 h1 {
-	color: var(--color-white-90);
+    color: var(--color-white-90);
 }
 
 .warning {
-	font-weight: bold;
-	color: var(--color-red);
-	font-size: 120%;
+    font-weight: bold;
+    color: var(--color-red);
+    font-size: 120%;
 }
 
 #info {
-	color: var(--color-white-90);
+    color: var(--color-white-90);
 }
 
 #random {
-	font-size: 24px;
+    font-size: 24px;
 }
 
 #images {
-	margin: 20px 0;
+    margin: 20px 0;
 }
 
 #images a:visited {
-	opacity: 0.3;
-	display: inline-block;
+    display: inline-block;
 }
 
 #images img {
-	margin-right: 5px;
-        background-color: var(--color-dark);
+    margin-right: 5px;
+    background-color: var(--color-dark);
 }
 
 #images img:hover {
-	border: 2px solid var(--color-blue);
+    border: 2px solid var(--color-lightblue);
 }
 
 #filteredimages {
-	margin: 20px 0;
+    margin: 20px 0;
 }
 
 #filteredimages a:visited {
-	opacity: 0.3;
-	display: inline-block;
+    display: inline-block;
 }
 
 #filteredimages img {
-	margin-right: 5px;
-        background-color: var(--color-dark);
+    margin-right: 5px;
+    background-color: var(--color-dark);
 }
 
 #filteredimages img:hover {
-	border: 2px solid var(--color-blue);
+    border: 2px solid var(--color-lightblue);
 }
 
 .collapsible {
-	background: linear-gradient(90deg, var(--color-gradient-left) 0%, var(--color-gradient-right) 100%);
-	color: var(--color-white-90);
-	padding: 6px;
-	width: 50%;
-	text-align: center;
-	outline: none;
-	font-size: 15px;
-        border: 0 none;
+    background: linear-gradient(90deg, var(--color-gradient-left) 0%, var(--color-gradient-right) 100%);
+    color: var(--color-white-90);
+    padding: 6px;
+    width: 50%;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+    border: 0 none;
 }
 
 .content {
-	width: 49.5%;
-	display: none;
-	overflow: hidden;
-	text-align: left;
-	background-color: var(--color-dark);
+    width: 49.5%;
+    display: none;
+    overflow: hidden;
+    text-align: left;
+    background-color: var(--color-dark);
+    padding: 6px;
 }
 
 a {
-	color: var(--color-blue);
+    color: var(--color-lightblue);
 }
 
 a:visited, a:hover {
-	color: var(--color-lightblue);
+    color: var(--color-blue);
 }
 
 .slidecontainer {
-        margin: 0 auto;
+    margin: 0 auto;
 }
