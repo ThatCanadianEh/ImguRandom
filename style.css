@@ -28,6 +28,7 @@ nav {
     overflow: hidden;
     color: var(--color-white-90);
     font-size: 1.5rem;
+    font-weight: bold;
     padding: 14px 16px;
     text-align: center;
 }
