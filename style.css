@@ -10,6 +10,10 @@
 
     --font-small-pc: 0.8rem;
     --font-small-mobile: 0.6rem;
+
+    --box-shadow-image: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+    --bg-gradient-bluegreen: linear-gradient(90deg, var(--color-gradient-left) 0%, var(--color-gradient-right) 100%);
 }
 
 body {
@@ -23,15 +27,15 @@ body {
 }
 
 nav {
-    background: linear-gradient(90deg, var(--color-gradient-left) 0%, var(--color-gradient-right) 100%);
+    background: var(--bg-gradient-bluegreen);
     margin: 0;
     overflow: hidden;
     color: var(--color-white-90);
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: bolder;
     padding: 14px 16px;
     text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    box-shadow: var(--box-shadow-image);
 }
 
 nav ul {
@@ -80,8 +84,8 @@ h1 {
 
 #images img {
     margin-right: 5px;
-    background-color: var(--color-dark);
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    background: var(--bg-gradient-bluegreen);
+    box-shadow: var(--box-shadow-image);
 }
 
 #images img:hover {
@@ -98,8 +102,8 @@ h1 {
 
 #filteredimages img {
     margin-right: 5px;
-    background-color: var(--color-dark);
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    background: var(--bg-gradient-bluegreen); 
+    box-shadow: var(--box-shadow-image);
 }
 
 #filteredimages img:hover {
@@ -107,7 +111,7 @@ h1 {
 }
 
 .collapsible {
-    background: linear-gradient(90deg, var(--color-gradient-left) 0%, var(--color-gradient-right) 100%);
+    background: var(--bg-gradient-bluegreen);
     color: var(--color-white-90);
     padding: 4px;
     width: 400px;
