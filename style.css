@@ -121,6 +121,11 @@ h1 {
     font-size: var(--font-small-pc);
 }
 
+/* Options dropdown - Slider padding */
+.content div {
+  padding: 8px;
+}
+
 a {
     color: var(--color-lightblue);
 }
