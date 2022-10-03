@@ -7,6 +7,9 @@
     --color-blue: hsl(236, 96%, 64%);
     --color-lightblue: hsl(225, 100%, 65%);
     --color-red: hsl(0, 99%, 62%);
+
+    --font-small-pc: 0.8rem;
+    --font-small-mobile: 0.6rem;
 }
 
 body {
@@ -16,6 +19,7 @@ body {
     font-family: Arial;
     margin: 0;
     padding: 0;
+    line-height: 1.0;
 }
 
 nav {
@@ -53,7 +57,7 @@ h1 {
 .warning {
     font-weight: bold;
     color: var(--color-red);
-    font-size: 0.8rem;
+    font-size: var(--font-small-pc);
 }
 
 #info {
@@ -61,7 +65,7 @@ h1 {
 }
 
 #random {
-    font-size: 0.8rem;
+    font-size: var(--font-small-pc);
 }
 
 #images {
@@ -105,18 +109,16 @@ h1 {
     width: 400px;
     text-align: center;
     outline: none;
-    font-size: 0.8rem;
+    font-size: var(--font-small-pc);
     border: 0 none;
 }
 
 .content {
-    width: 400px;
     display: none;
     overflow: hidden;
     text-align: left;
     background-color: var(--color-dark);
-    padding: 4px;
-    font-size: 0.8rem;
+    font-size: var(--font-small-pc);
 }
 
 a {
@@ -133,10 +135,10 @@ a:visited, a:hover {
 
 #sitenotice {
     background-color: var(--color-dark);
-    padding: 4px;
+    padding: 2px 0;
     width: 400px;
     margin: 4px 0;
-    font-size: 0.8rem;
+    font-size: var(--font-small-pc);
     color: var(--color-white-90);
 }
 
@@ -146,8 +148,16 @@ a:visited, a:hover {
   }
   .content {
     width: 90%;
+    font-size: var(--font-small-mobile);
   }
   #sitenotice {
     width: 90%;
+    font-size: var(--font-small-mobile);
+  }
+  .warning {
+    font-size: var(--font-small-mobile);
+  }
+  h1 {
+    font-size: 1rem;
   }
 }
