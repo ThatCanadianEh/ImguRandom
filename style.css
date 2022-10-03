@@ -147,7 +147,7 @@ a:visited, a:hover {
   .content {
     width: 90%;
   }
-  .sitenotice {
+  #sitenotice {
     width: 90%;
   }
 }
