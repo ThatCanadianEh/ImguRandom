@@ -140,7 +140,7 @@ a:visited, a:hover {
 
 #sitenotice {
     background-color: var(--color-dark);
-    padding: 2px 0;
+    padding: 2px;
     width: 400px;
     margin: 4px 0;
     font-size: var(--font-small-pc);
