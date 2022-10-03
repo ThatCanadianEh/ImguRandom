@@ -13,7 +13,7 @@ body {
     background-color: var(--color-body);
     color: var(--color-white-90);
     overflow-y: visible;
-    font-family: Arial
+    font-family: Arial;
 }
 
 h1 {
@@ -71,21 +71,22 @@ h1 {
 .collapsible {
     background: linear-gradient(90deg, var(--color-gradient-left) 0%, var(--color-gradient-right) 100%);
     color: var(--color-white-90);
-    padding: 6px;
-    width: 50%;
+    padding: 4px;
+    width: 100%;
     text-align: center;
     outline: none;
-    font-size: 15px;
+    font-size: 0.8rem;
     border: 0 none;
 }
 
 .content {
-    width: 49.5%;
+    width: 100%;
     display: none;
     overflow: hidden;
     text-align: left;
     background-color: var(--color-dark);
-    padding: 6px;
+    padding: 4px;
+    font-size: 0.8rem;
 }
 
 a {
@@ -102,10 +103,10 @@ a:visited, a:hover {
 
 #sitenotice {
     background-color: var(--color-dark);
-    padding: 6px;
-    width: 600px;
+    padding: 4px;
+    width: 100%;
     margin: 4px 0;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     color: var(--white-90);
 }
 
