@@ -23,6 +23,9 @@ nav {
     margin: 0;
     overflow: hidden;
     color: var(--color-white-90);
+    font-size: 1.5rem;
+    padding: 14px 16px;
+    text-align: center;
 }
 
 nav ul {
@@ -99,7 +102,7 @@ h1 {
     background: linear-gradient(90deg, var(--color-gradient-left) 0%, var(--color-gradient-right) 100%);
     color: var(--color-white-90);
     padding: 4px;
-    width: 100%;
+    width: 400px;
     text-align: center;
     outline: none;
     font-size: 0.8rem;
@@ -107,7 +110,7 @@ h1 {
 }
 
 .content {
-    width: 96%;
+    width: 400px;
     display: none;
     overflow: hidden;
     text-align: left;
@@ -131,8 +134,20 @@ a:visited, a:hover {
 #sitenotice {
     background-color: var(--color-dark);
     padding: 4px;
-    width: 96%;
+    width: 400px;
     margin: 4px 0;
     font-size: 0.8rem;
     color: var(--color-white-90);
+}
+
+@media screen and (max-width: 600px) {
+  .collapsible {
+    width: 90%;
+  }
+  .content {
+    width: 90%;
+  }
+  .sitenotice {
+    width: 90%;
+  }
 }
