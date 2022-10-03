@@ -115,6 +115,7 @@ h1 {
 }
 
 .content {
+    width: 400px;
     display: none;
     overflow: hidden;
     text-align: left;
@@ -148,6 +149,7 @@ a:visited, a:hover {
     color: var(--color-white-90);
 }
 
+/* Mobile theming */
 @media screen and (max-width: 600px) {
   .collapsible {
     width: 90%;
