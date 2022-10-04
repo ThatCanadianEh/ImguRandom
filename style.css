@@ -26,6 +26,21 @@ body {
     line-height: 1.0;
 }
 
+/* Hyperlinks */
+a {
+    color: var(--color-lightblue);
+}
+
+a:visited, a:hover {
+    color: var(--color-blue);
+}
+
+/* Header text */
+h1 {
+    color: var(--color-white-90);
+}
+
+/* Topnav */
 nav {
     background: var(--bg-gradient-bluegreen);
     margin: 0;
@@ -56,10 +71,16 @@ nav > ul > li > a {
     text-decoration: none;
 }
 
-h1 {
+#sitenotice {
+    background-color: var(--color-dark);
+    padding: 2px;
+    width: 400px;
+    margin: 4px 0;
+    font-size: var(--font-small-pc);
     color: var(--color-white-90);
 }
 
+/* Warning text */
 .warning {
     font-weight: bold;
     color: var(--color-red);
@@ -74,42 +95,30 @@ h1 {
     font-size: var(--font-small-pc);
 }
 
-#images {
+/* Image styling */
+#images, 
+#filteredimages {
     margin: 20px 0;
 }
 
-#images a:visited {
+#images a:visited, 
+#filteredimages a:visited {
     display: inline-block;
 }
 
-#images img {
+#images img, 
+#filteredimages img {
     margin-right: 5px;
     background: var(--bg-gradient-bluegreen);
     box-shadow: var(--box-shadow-image);
 }
 
-#images img:hover {
-    border: 2px solid var(--color-lightblue);
-}
-
-#filteredimages {
-    margin: 20px 0;
-}
-
-#filteredimages a:visited {
-    display: inline-block;
-}
-
-#filteredimages img {
-    margin-right: 5px;
-    background: var(--bg-gradient-bluegreen); 
-    box-shadow: var(--box-shadow-image);
-}
-
+#images img:hover, 
 #filteredimages img:hover {
     border: 2px solid var(--color-lightblue);
 }
 
+/* Options panel styling */
 .collapsible {
     background: var(--bg-gradient-bluegreen);
     color: var(--color-white-90);
@@ -130,30 +139,16 @@ h1 {
     font-size: var(--font-small-pc);
 }
 
-/* Options dropdown - Slider padding */
 .content div {
   padding: 8px;
 }
 
-a {
-    color: var(--color-lightblue);
-}
-
-a:visited, a:hover {
-    color: var(--color-blue);
+.content .checkboxes {
+  padding: 8px;
 }
 
 .slidecontainer {
     margin: 0 auto;
-}
-
-#sitenotice {
-    background-color: var(--color-dark);
-    padding: 2px;
-    width: 400px;
-    margin: 4px 0;
-    font-size: var(--font-small-pc);
-    color: var(--color-white-90);
 }
 
 /* Mobile theming */
