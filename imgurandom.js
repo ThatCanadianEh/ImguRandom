@@ -10,6 +10,9 @@ imgurcache = new Array();
 
 jQuery(document).ready(function($) {
         var numImages = document.getElementById("numImages");
+	if (numImages.value> 200) numImages.value= 200;
+	else if (numImages.value < 1) numImages.value = 1;
+
 //      var prevImages = new Array();
 
 	var info_el = $("#info"),
