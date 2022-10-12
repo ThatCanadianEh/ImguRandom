@@ -174,4 +174,8 @@ jQuery(document).ready(function($) {
 	$("#random").on('click', function() {
 		Imgur.fetch(numImages.value);
 	});
+	// hacky workaround for a 2nd load images button at the bottom 
+	$("#random2").on('click', function() {
+		Imgur.fetch(numImages.value);
+	});
 });
