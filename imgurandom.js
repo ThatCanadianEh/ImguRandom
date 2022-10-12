@@ -8,25 +8,15 @@ window.char_length = 5;
 
 imgurcache = new Array();
 
-/* let boxes = document.getElementsByClassName('box').length; 
-
-function save() {	
-	for (let i = 0; i <= boxes; i++) {
-		var checkbox = document.getElementById(String(i));
-		localStorage.setItem("checkbox" + String(i), checkbox.checked);	
-	}
-}
-
-window.addEventListener('change', save);
-
-for (let i = 0; i <= boxes; i++) {
-	if (localStorage.length > 0) {
-		var checked = JSON.parse(localStorage.getItem("checkbox" + String(i)));
-		document.getElementById(String(i)).checked = checked;
-	}
-}*/
-
 jQuery(document).ready(function($) {
+        var boxes = document.getElementsByClassName('box').length; 
+
+        for (let i = 0; i <= boxes; i++) {
+	        if (localStorage.length > 0) {
+		        var checked = JSON.parse(localStorage.getItem("checkbox" + String(i)));
+		        document.getElementById(String(i)).checked = checked;
+	        }
+        }
         var numImages = document.getElementById("numImages");
 	if (numImages.value > 200) numImages.value = 200;
 	else if (numImages.value < 1) numImages.value = 1;
