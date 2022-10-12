@@ -95,7 +95,8 @@ nav > ul > li > a {
     font-size: var(--font-small-pc);
 }
 
-.hideonload {
+.hideonload, 
+.hideonload-filtered {
     display: none;
 }
 
