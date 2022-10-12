@@ -13,7 +13,7 @@ jQuery(document).ready(function($) {
 	if (numImages.value > 200) numImages.value = 200;
 	else if (numImages.value < 1) numImages.value = 1;
 
-	/* let boxes = document.getElementsByClassName('box').length;
+	let boxes = document.getElementsByClassName('box').length;
 
 	function save() {	
 		for (let i = 1; i <= boxes; i++) {
@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
 		}
 	}
 	
-	window.addEventListener('change', save); */
+	window.addEventListener('change', save);
 
 //      var prevImages = new Array();
 
