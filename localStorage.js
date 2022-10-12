@@ -5,8 +5,8 @@ function save() {
 		var checkbox = document.getElementById(String(i));
 		localStorage.setItem("checkbox" + String(i), checkbox.checked);	
   	}
-	var numImages = document.getElementById("numImages");
-	localStorage.setItem("localNumImages", numImages.value);
+//	var numImages = document.getElementById("numImages");
+//	localStorage.setItem("localNumImages", numImages.value);
 }
 
 window.addEventListener('change', save);
