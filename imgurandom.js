@@ -22,6 +22,9 @@ jQuery(document).ready(function($) {
 	var Imgur = {
 		fetch: function(num) {
 			var self = this;
+			var hideonload = document.getElementsByClassName("hideonload");
+			var hideonload2 = document.getElementsByClassName("hideonload-filtered");
+			var showFiltered = document.getElementById("showFiltered").checked;
 			
 			// Reset image counters
 			self.total = num;
@@ -33,13 +36,14 @@ jQuery(document).ready(function($) {
 			$(filteredimages_el).empty();
 
 			// Hide on load filtering
-			/* var hideonload = document.getElementsByClassName("hideonload");
-			hideonload.style.display = "block";
-			var showFiltered = document.getElementById("showFiltered").checked;
+			for (let i = 0; i < hideonload.length; i++) {
+				hideonload[i].style.display = "block";
+			}
 			if (showFiltered == true) {
-				var hideonload2 = document.getElementsByClassName("hideonload-filtered");
-				hideonload2.style.display = "block";
-			}*/
+				for (let i = 0; i < hideonload2.length; i++) {
+					hideonload2[i].style.display = "block";
+				}
+			}
 
 			for (let i = 0; i < num; i++) {
 				self.hunt(function(id) {
