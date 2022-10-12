@@ -32,6 +32,11 @@ jQuery(document).ready(function($) {
 			$(images_el).empty();
 			$(filteredimages_el).empty();
 
+			var hideonload = document.getElementsByClassName("hideonload");
+			for (let i = 0; i < hideonload.length; i++) {
+				hideonload[i].style.display = "block";
+			}
+
 			for (let i = 0; i < num; i++) {
 				self.hunt(function(id) {
 					self.done++;
@@ -173,18 +178,10 @@ jQuery(document).ready(function($) {
 
 	$("#random").on('click', function() {
 		Imgur.fetch(numImages.value);
-		var hideonload = document.getElementsByClassName("hideonload");
-		for (let i = 0; i < hideonload.length; i++) {
-			hideonload[i].style.display = "block";
-		}
 	});
 	
 	// hacky workaround for a 2nd load images button at the bottom 
 	$("#random2").on('click', function() {
 		Imgur.fetch(numImages.value);
-		var hideonload = document.getElementsByClassName("hideonload");
-		for (let i = 0; i < hideonload.length; i++) {
-			hideonload[i].style.display = "block";
-		}
 	});
 });
