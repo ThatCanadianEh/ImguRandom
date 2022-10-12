@@ -6,7 +6,7 @@
 window.char_length = 5;
 //window.char_length = 7;
 
-var boxes = document.getElementsByClassName('box').length; 
+/* var boxes = document.getElementsByClassName('box').length; 
 
 function save() {	
         for (let i = 1; i <= boxes; i++) {
@@ -15,7 +15,7 @@ function save() {
         }
 }
 
-window.addEventListener('change', save);
+window.addEventListener('change', save); */
 
 imgurcache = new Array();
 
