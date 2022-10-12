@@ -40,7 +40,7 @@ jQuery(document).ready(function($) {
 			var self = this;
 			var hideonload = document.getElementsByClassName("hideonload");
 			var hideonload2 = document.getElementsByClassName("hideonload-filtered");
-			var showFiltered = document.getElementById("0").checked;
+			var showFiltered = document.getElementById("1").checked;
 			
 			// Reset image counters
 			self.total = num;
