@@ -32,10 +32,12 @@ jQuery(document).ready(function($) {
 			$(images_el).empty();
 			$(filteredimages_el).empty();
 
+			// Hide on load filtering
 			var hideonload = document.getElementsByClassName("hideonload");
-			for (let i = 0; i < hideonload.length; i++) {
-				hideonload[i].style.display = "block";
-			}
+			hideonload.style.display = "block";
+			var showFiltered = document.getElementById("showFiltered").checked;
+			var hideonload2 = document.getElementsByClassName("hideonload-filtered");
+			hideonload2.style.display = "block";
 
 			for (let i = 0; i < num; i++) {
 				self.hunt(function(id) {
@@ -60,9 +62,9 @@ jQuery(document).ready(function($) {
 			var monster = document.getElementById("monster").checked;
 			var yugioh = document.getElementById("yugioh").checked;
                         var showFiltered = document.getElementById("showFiltered").checked;
-			var self = this,
-				id = self.random(window.char_length),
-				img = new Image;
+			var self = this;
+			var id = self.random(window.char_length);
+			var img = new Image;
 
                         // Sub-function: Failed to get a proper image
 			function fail() {
