@@ -202,7 +202,7 @@ jQuery(document).ready(function($) {
 	        }
         }
         function save() {	
-                for (let i = 1; i <= boxes; i++) {
+                for (let i = 0; i <= boxes; i++) {
 	                var checkbox = document.getElementById(String(i));
                         localStorage.setItem("checkbox" + String(i), checkbox.checked);	
                 }
