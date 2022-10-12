@@ -9,14 +9,6 @@ window.char_length = 5;
 imgurcache = new Array();
 
 jQuery(document).ready(function($) {
-        var boxes = document.getElementsByClassName('box').length; 
-
-        for (let i = 0; i <= boxes; i++) {
-	        if (localStorage.length > 0) {
-		        var checked = JSON.parse(localStorage.getItem("checkbox" + String(i)));
-		        document.getElementById(String(i)).checked = checked;
-	        }
-        }
         var numImages = document.getElementById("numImages");
 	if (numImages.value > 200) numImages.value = 200;
 	else if (numImages.value < 1) numImages.value = 1;
@@ -200,4 +192,13 @@ jQuery(document).ready(function($) {
 	$("#random2").on('click', function() {
 		Imgur.fetch(numImages.value);
 	});
+
+        var boxes = document.getElementsByClassName('box').length; 
+
+        for (let i = 0; i <= boxes; i++) {
+	        if (localStorage.length > 0) {
+		        var checked = JSON.parse(localStorage.getItem("checkbox" + String(i)));
+		        document.getElementById(String(i)).checked = checked;
+	        }
+        }
 });
