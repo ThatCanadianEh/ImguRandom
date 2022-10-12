@@ -20,10 +20,9 @@ window.addEventListener('change', save);*/
 imgurcache = new Array();
 
 jQuery(document).ready(function($) {
-	var localStorageSliderNumber;
-        //var numImages = document.getElementById("numImages");
-	//if (numImages.value > 200) numImages.value = 200;
-	//else if (numImages.value < 1) numImages.value = 1;
+        var numImages = document.getElementById("numImages");
+	if (numImages.value > 200) numImages.value = 200;
+	else if (numImages.value < 1) numImages.value = 1;
 
 //      var prevImages = new Array();
 
@@ -37,17 +36,6 @@ jQuery(document).ready(function($) {
 			var checked = JSON.parse(localStorage.getItem("checkbox" + String(i)));
 			document.getElementById(String(i)).checked = checked;
         	}
-	}
-	if (localStorage.length > 0) {
-		//var numImages = document.getElementById("numImages");
-		if (document.localStorage.getItem("localNumImages") != null) {
-		localStorageSliderNumber = document.localStorage.getItem("localNumImages");
-	} else {
-		document.localStorage.setItem("localNumImages", "100");
-		localStorageSliderNumber = 100;
-	} 
-		if (localStorageSliderNumber > 200) localStorageSliderNumber = 200;
-		else if (localStorageSliderNumber < 1) localStorageSliderNumber = 1;
 	}
 
 	var Imgur = {
@@ -216,11 +204,11 @@ jQuery(document).ready(function($) {
 	};
 
 	$("#random").on('click', function() {
-		Imgur.fetch(localStorageSliderNumber);
+		Imgur.fetch(numImages.value);
 	});
 	
 	// hacky workaround for a 2nd load images button at the bottom 
 	$("#random2").on('click', function() {
-		Imgur.fetch(localStorageSliderNumber);
+		Imgur.fetch(numImages.value);
 	});
 });
