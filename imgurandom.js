@@ -19,18 +19,18 @@ function save() {
 
 window.addEventListener('change', save);
 
+// for loading
+for (let i = 0; i <= boxes; i++) {
+	if (localStorage.length > 0) {
+		var checked = JSON.parse(localStorage.getItem("checkbox" + String(i)));
+		document.getElementById(String(i)).checked = checked;
+	}
+}
+
 jQuery(document).ready(function($) {
         var numImages = document.getElementById("numImages");
 	if (numImages.value > 200) numImages.value = 200;
 	else if (numImages.value < 1) numImages.value = 1;
-
-	// for loading
-	for (let i = 0; i <= boxes; i++) {
-		if (localStorage.length > 0) {
-			var checked = JSON.parse(localStorage.getItem("checkbox" + String(i)));
-			document.getElementById(String(i)).checked = checked;
-		}
-	}
 
 //      var prevImages = new Array();
 
