@@ -6,16 +6,16 @@
 window.char_length = 5;
 //window.char_length = 7;
 
-/* var boxes = document.getElementsByClassName('box').length; 
+/*let boxes = document.getElementsByClassName('box').length; 
 
 function save() {	
         for (let i = 1; i <= boxes; i++) {
 	        var checkbox = document.getElementById(String(i));
                 localStorage.setItem("checkbox" + String(i), checkbox.checked);	
         }
-}*/
+}
 
-window.addEventListener('change', save);
+window.addEventListener('change', save);*/
 
 imgurcache = new Array();
 
@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
 		images_el = $("#images"),
 		filteredimages_el = $("#filteredimages");
         // this seems to work. don't fuck with it.
-        var boxes = document.getElementsByClassName('box').length; 
+        let boxes = document.getElementsByClassName('box').length; 
 	for (let i = 1; i <= boxes; i++) {
 		if (localStorage.length > 0) {
 			var checked = JSON.parse(localStorage.getItem("checkbox" + String(i)));
