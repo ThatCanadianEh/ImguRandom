@@ -21,17 +21,18 @@ jQuery(document).ready(function($) {
 
 	var Imgur = {
 		fetch: function(num) {
-			var self = this,
-				x;
-
+			var self = this;
+			
+			// Reset image counters
 			self.total = num;
 			self.done = 0;
 			self.failures = 0;
-
+			
+			// Clear images & filtered images sections
 			$(images_el).empty();
 			$(filteredimages_el).empty();
 
-			for (x = 0; x < num; x++) {
+			for (let i = 0; i < num; i++) {
 				self.hunt(function(id) {
 					self.done++;
 
@@ -143,11 +144,10 @@ jQuery(document).ready(function($) {
 			img.onerror = fail;
 		},
 		random: function(len) {
-			var text = new Array(),
-				possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789",
-				i;
+			var text = new Array();
+			var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-			for (i = 0; i < len; i++) {
+			for (let i = 0; i < len; i++) {
 				imgurchar = possible.charAt(Math.floor((Math.random() * possible.length)));
 
 				if (-1 == text.indexOf(imgurchar)) {
@@ -173,9 +173,18 @@ jQuery(document).ready(function($) {
 
 	$("#random").on('click', function() {
 		Imgur.fetch(numImages.value);
+		var hideonload = document.getElementsByClassName("hideonload");
+		for (let i = 0; i < hideonload.length; i++) {
+			hideonload[i].style.display = "block";
+		}
 	});
+	
 	// hacky workaround for a 2nd load images button at the bottom 
 	$("#random2").on('click', function() {
 		Imgur.fetch(numImages.value);
+		var hideonload = document.getElementsByClassName("hideonload");
+		for (let i = 0; i < hideonload.length; i++) {
+			hideonload[i].style.display = "block";
+		}
 	});
 });
