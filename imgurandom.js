@@ -35,14 +35,14 @@ jQuery(document).ready(function($) {
 			$(images_el).empty();
 			$(filteredimages_el).empty();
 
-			// Hide on load filtering
+			// Hide on load for the 2nd "Load Images" button
 			for (let i = 0; i < hideonload.length; i++) {
 				hideonload[i].style.display = "block";
 			}
-			if (showFiltered == true) {
-				for (let i = 0; i < hideonload2.length; i++) {
-					hideonload2[i].style.display = "block";
-				}
+			// Hide on load for the Filtered Images section
+			// Ternary-ized to toggle the section on/off based on your selection
+			for (let i = 0; i < hideonload2.length; i++) {
+				hideonload2[i].style.display = (showFiltered == true) ? "block" : "none";
 			}
 
 			for (let i = 0; i < num; i++) {
