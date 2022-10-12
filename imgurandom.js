@@ -62,7 +62,7 @@ jQuery(document).ready(function($) {
 			for (let i = 0; i < hideonload2.length; i++) {
 				hideonload2[i].style.display = (showFiltered == true) ? "block" : "none";
 			}
-
+                        var boxes = document.getElementsByClassName('box').length; 
 			for (let i = 1; i <= boxes; i++) {
 				if (localStorage.length > 0) {
 					var checked = JSON.parse(localStorage.getItem("checkbox" + String(i)));
