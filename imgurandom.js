@@ -6,7 +6,7 @@
 window.char_length = 5;
 //window.char_length = 7;
 
-/*var boxes = document.getElementsByClassName('box').length; 
+var boxes = document.getElementsByClassName('box').length; 
 
 function save() {	
         for (let i = 1; i <= boxes; i++) {
@@ -14,12 +14,6 @@ function save() {
                 localStorage.setItem("checkbox" + String(i), checkbox.checked);	
         }
 }
-for (let i = 1; i <= boxes; i++) {
-	if (localStorage.length > 0) {
-                var checked = JSON.parse(localStorage.getItem("checkbox" + String(i)));
-                document.getElementById(String(i)).checked = checked;
-        }
-}*/
 
 window.addEventListener('change', save);
 
@@ -35,14 +29,14 @@ jQuery(document).ready(function($) {
 	var info_el = $("#info"),
 		images_el = $("#images"),
 		filteredimages_el = $("#filteredimages");
-
-var boxes = document.getElementsByClassName('box').length; 
-			for (let i = 1; i <= boxes; i++) {
-				if (localStorage.length > 0) {
-					var checked = JSON.parse(localStorage.getItem("checkbox" + String(i)));
-					document.getElementById(String(i)).checked = checked;
-        			}
-			}
+        // this seems to work. don't fuck with it.
+        var boxes = document.getElementsByClassName('box').length; 
+	for (let i = 1; i <= boxes; i++) {
+		if (localStorage.length > 0) {
+			var checked = JSON.parse(localStorage.getItem("checkbox" + String(i)));
+			document.getElementById(String(i)).checked = checked;
+        	}
+	}
 
 	var Imgur = {
 		fetch: function(num) {
