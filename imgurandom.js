@@ -8,7 +8,7 @@ window.char_length = 5;
 
 imgurcache = new Array();
 
-let boxes = document.getElementsByClassName('box').length; 
+/* let boxes = document.getElementsByClassName('box').length; 
 
 function save() {	
 	for (let i = 0; i <= boxes; i++) {
@@ -19,13 +19,12 @@ function save() {
 
 window.addEventListener('change', save);
 
-// for loading
 for (let i = 0; i <= boxes; i++) {
 	if (localStorage.length > 0) {
 		var checked = JSON.parse(localStorage.getItem("checkbox" + String(i)));
 		document.getElementById(String(i)).checked = checked;
 	}
-}
+}*/
 
 jQuery(document).ready(function($) {
         var numImages = document.getElementById("numImages");
@@ -79,14 +78,14 @@ jQuery(document).ready(function($) {
 		},
 
 		hunt: function(cb) {
-                        var monopoly = document.getElementById("2").checked;
+                        var showFiltered = document.getElementById("0").checked;
 			var tiny = document.getElementById("1").checked;
+                        var monopoly = document.getElementById("2").checked;
 			var cellphone = document.getElementById("3").checked;
 			var facebook = document.getElementById("4").checked;
 			var youtube = document.getElementById("5").checked;
 			var monster = document.getElementById("6").checked;
 			var yugioh = document.getElementById("7").checked;
-                        var showFiltered = document.getElementById("0").checked;
 			var self = this,
 				id = self.random(window.char_length),
 				img = new Image;
