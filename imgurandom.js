@@ -5,7 +5,6 @@
 //window.num_images = 104;
 window.char_length = 5;
 //window.char_length = 7;
-window.addEventListener('change', save);
 
 var boxes = document.getElementsByClassName('box').length; 
 
@@ -16,12 +15,14 @@ function save() {
         }
 }
 
-for (let i = 1; i <= boxes; i++) {
+/* for (let i = 1; i <= boxes; i++) {
 	if (localStorage.length > 0) {
                 var checked = JSON.parse(localStorage.getItem("checkbox" + String(i)));
                 document.getElementById(String(i)).checked = checked;
         }
-}
+}*/
+
+window.addEventListener('change', save);
 
 imgurcache = new Array();
 
@@ -60,6 +61,13 @@ jQuery(document).ready(function($) {
 			// Ternary-ized to toggle the section on/off based on your selection
 			for (let i = 0; i < hideonload2.length; i++) {
 				hideonload2[i].style.display = (showFiltered == true) ? "block" : "none";
+			}
+
+			for (let i = 1; i <= boxes; i++) {
+				if (localStorage.length > 0) {
+					var checked = JSON.parse(localStorage.getItem("checkbox" + String(i)));
+					document.getElementById(String(i)).checked = checked;
+        			}
 			}
 
 			for (let i = 0; i < num; i++) {
