@@ -33,13 +33,13 @@ jQuery(document).ready(function($) {
 			$(filteredimages_el).empty();
 
 			// Hide on load filtering
-			var hideonload = document.getElementsByClassName("hideonload");
+			/* var hideonload = document.getElementsByClassName("hideonload");
 			hideonload.style.display = "block";
 			var showFiltered = document.getElementById("showFiltered").checked;
 			if (showFiltered == true) {
 				var hideonload2 = document.getElementsByClassName("hideonload-filtered");
 				hideonload2.style.display = "block";
-			}
+			}*/
 
 			for (let i = 0; i < num; i++) {
 				self.hunt(function(id) {
