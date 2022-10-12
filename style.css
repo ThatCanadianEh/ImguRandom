@@ -95,6 +95,10 @@ nav > ul > li > a {
     font-size: var(--font-small-pc);
 }
 
+#hideonload {
+    display: none;
+}
+
 /* Image styling */
 #images, 
 #filteredimages {
