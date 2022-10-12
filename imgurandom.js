@@ -193,7 +193,7 @@ jQuery(document).ready(function($) {
 		Imgur.fetch(numImages.value);
 	});
 
-        var boxes = document.getElementsByClassName('box').length; 
+        /* var boxes = document.getElementsByClassName('box').length; 
 
         for (let i = 0; i <= boxes; i++) {
 	        if (localStorage.length > 0) {
@@ -208,5 +208,5 @@ jQuery(document).ready(function($) {
                 }
         }
 
-        window.addEventListener('change', save);
+        window.addEventListener('change', save);*/
 });
