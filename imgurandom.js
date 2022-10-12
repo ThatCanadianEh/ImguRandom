@@ -5,7 +5,7 @@
 //window.num_images = 104;
 window.char_length = 5;
 //window.char_length = 7;
-/*window.addEventListener('change', save);
+window.addEventListener('change', save);
 
 var boxes = document.getElementsByClassName('box').length; 
 
@@ -21,7 +21,7 @@ for (let i = 1; i <= boxes; i++) {
                 var checked = JSON.parse(localStorage.getItem("checkbox" + String(i)));
                 document.getElementById(String(i)).checked = checked;
         }
-}*/
+}
 
 imgurcache = new Array();
 
