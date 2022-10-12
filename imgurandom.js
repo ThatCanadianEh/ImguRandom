@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
 			var self = this;
 			var hideonload = document.getElementsByClassName("hideonload");
 			var hideonload2 = document.getElementsByClassName("hideonload-filtered");
-			var showFiltered = document.getElementById("showFiltered").checked;
+			var showFiltered = document.getElementById("0").checked;
 			
 			// Reset image counters
 			self.total = num;
@@ -60,14 +60,14 @@ jQuery(document).ready(function($) {
 		},
 
 		hunt: function(cb) {
-                        var monopoly = document.getElementById("monopoly").checked;
-			var tiny = document.getElementById("tiny").checked;
-			var cellphone = document.getElementById("cellphone").checked;
-			var facebook = document.getElementById("facebook").checked;
-			var youtube = document.getElementById("youtube").checked;
-			var monster = document.getElementById("monster").checked;
-			var yugioh = document.getElementById("yugioh").checked;
-                        var showFiltered = document.getElementById("showFiltered").checked;
+                        var monopoly = document.getElementById("2").checked;
+			var tiny = document.getElementById("1").checked;
+			var cellphone = document.getElementById("3").checked;
+			var facebook = document.getElementById("4").checked;
+			var youtube = document.getElementById("5").checked;
+			var monster = document.getElementById("6").checked;
+			var yugioh = document.getElementById("7").checked;
+                        var showFiltered = document.getElementById("0").checked;
 			var self = this,
 				id = self.random(window.char_length),
 				img = new Image;
