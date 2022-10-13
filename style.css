@@ -82,6 +82,7 @@ nav > ul > li > a {
 
 #sitenotice p {
     padding: 2px 0;
+    line-height: 1.2;
 }
 
 /* Warning text */
