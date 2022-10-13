@@ -80,6 +80,10 @@ nav > ul > li > a {
     color: var(--color-white-90);
 }
 
+#sitenotice p {
+    padding: 2px 0;
+}
+
 /* Warning text */
 .warning {
     font-weight: bold;
