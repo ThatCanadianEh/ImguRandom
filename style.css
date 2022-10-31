@@ -125,7 +125,7 @@ nav > ul > li > a {
 
 #images img:hover, 
 #filteredimages img:hover {
-    border: 2px solid var(--color-lightblue);
+
 }
 
 /* Options panel styling */
